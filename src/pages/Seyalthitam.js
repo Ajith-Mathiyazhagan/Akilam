@@ -13,6 +13,7 @@ import {
   FaWater,
 } from "react-icons/fa";
 
+
 const Seyalthitam = () => {
   const navigate = useNavigate();
 
@@ -39,8 +40,8 @@ const Seyalthitam = () => {
   return (
     <div className="container">
       <div className="row text-center mt-3">
-        <div className="col-7">
-          <p className="h4 fw-bold  text-start  ms-2">செயல்திட்டம் :</p>
+        <div className="col-8">
+          <p className="h4 fw-bold mb-0 text-start  ms-2">செயல்திட்டம் :</p>
         </div>
       </div>
 
@@ -64,12 +65,13 @@ const Seyalthitam = () => {
 
       {/* “Join with us” button */}
       <button
-        onClick={() => navigate("/join")}
+        onClick={() => navigate("/Join")}
         className="btn btn-danger fw-bold rounded-3 mb-3 d-flex align-items-center justify-content-center mx-auto px-4 py-2 gap-2"
       >
-        <FaHandshake className="fs-5" />
+        <FaHandshake className="fs-5 " />
         உறவாய் இணைய
       </button>
+      
     </div>
   );
 };

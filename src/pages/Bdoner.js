@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { db } from "../firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import tamilnaduData from "../data/tamilnaduData.json";
+import logo from "../assets/logoakilam.png";
+import mt from "../assets/mm.jpg";
+import na from "../assets/na.jpg";
 
 const Bdoner = () => {
   const [step, setStep] = useState(1);
@@ -44,7 +47,7 @@ const Bdoner = () => {
       (step === 4 && !formData.district) ||
       (step === 5 && !formData.constituency)
     ) {
-      alert("கृபயா அனைத்து புலங்களையும் நிரப்பவும்!");
+      alert("அனைத்து இடங்களையும் நிரப்பவும்!");
       return;
     }
     setStep(step + 1);
@@ -90,13 +93,51 @@ const Bdoner = () => {
     tamilnaduData[formData.country]?.[formData.state]?.[formData.district];
 
   return (
-    <div className="container py-3">
-      <h3 className="mb-3 text-center text-danger fw-bold">இரத்ததானம் செய்யும் பதிவு</h3>
+    <div className="container ">
+      <div className="container text-center bg-white mt-3">
+              <div className="row  ">
+                <div className="col-3 col-md-3  col-lg-2">
+                  <p className="fw-bold mx-auto text-center mb-0">உறவாய் இணைவோம்!</p>
+                  <img
+                    src={na}
+                    alt="Anna"
+                    className="img-fluid br w-75 h-50  border-success rounded-circle"
+                  />
+                </div>
+      
+                <div className="col-1 col-md-1 col-lg-2"></div>
+      
+                <div className="col-4 col-md-4 col-lg-4">
+                  <p className="fw-bold h2 mx-auto text-center mb-0 ">அ</p>
+                  <img src={logo} alt="Logo" className="img-fluid logo-img mb-0" />
+                </div>
+      
+                <div className="col-1 col-md-1 col-lg-2"></div>
+      
+                <div className="col-3 col-md-3 mb-6 col-lg-2 mx-auto">
+                  <p className="fw-bold mx-auto text-center mb-0">உலகை காப்போம்!</p>
+                  <img
+                    src={mt}
+                    alt="Anna"
+                    className="img-fluid br w-75 h-50  border-success rounded-circle"
+                  />
+                </div>
+              </div>
+            </div>
+      
+            <h4 className=" text-center text-danger fw-bold">
+              அகிலம் நண்பர்கள் அறக்கட்டளை
+            </h4>
+      
+            <h6 className="text-center fw-light">
+              உறவாய் இணைவோம் உதிரம் கொடுத்து பல உயிர்களை காப்போம் !{" "}
+            </h6>
+      <h4 className="mb-3 text-center text-danger fw-bold">இரத்ததானம் செய்யும் பதிவு</h4>
       <form className="border p-4 rounded shadow bg-light" onSubmit={handleSubmit}>
         {/* Step 1: Blood Group */}
         {step === 1 && (
           <div className="text-center">
-            <label className="fw-bold">உங்கள் ரத்த வகை</label>
+            <label className="fw-bold">உங்கள் இரத்த வகை</label>
             <select
               name="bloodGroup"
               value={formData.bloodGroup}
@@ -113,7 +154,7 @@ const Bdoner = () => {
               <option value="AB+">AB+</option>
               <option value="AB-">AB-</option>
             </select>
-            <button type="button" className="btn btn-primary" onClick={nextStep}>Next</button>
+            <button type="button" className="btn btn-primary" onClick={nextStep}>அடுத்து</button>
           </div>
         )}
 
@@ -197,8 +238,8 @@ const Bdoner = () => {
                 <option key={c} value={c}>{c}</option>
               ))}
             </select>
-            <button type="button" className="btn btn-secondary me-2" onClick={prevStep}>Back</button>
-            <button type="button" className="btn btn-primary" onClick={nextStep}>Next</button>
+            <button type="button" className="btn btn-secondary me-2" onClick={prevStep}>பின் செல்</button>
+            <button type="button" className="btn btn-primary" onClick={nextStep}>அடுத்து</button>
           </div>
         )}
 
@@ -276,7 +317,7 @@ const Bdoner = () => {
               required
             ></textarea>
             <div className="d-flex justify-content-between">
-              <button type="button" className="btn btn-secondary" onClick={prevStep}>Back</button>
+              <button type="button" className="btn btn-secondary" onClick={prevStep}>பின் செல்</button>
               <button type="submit" className="btn btn-success">சமர்ப்பிக்கவும்</button>
             </div>
           </div>

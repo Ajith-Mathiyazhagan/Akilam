@@ -3,12 +3,13 @@ import logo from "../assets/logoakilam.png";
 import mt from "../assets/mm.jpg";
 import na from "../assets/na.jpg";
 import Seyalthitam from "./Seyalthitam";
+import Count from "./Count";
 
 
 const Home = () => {
   return (
-    <div className="container bg-white mt-2 text-center">
-      <div className="row ">
+    <div className="container text-center">
+      <div className="row mt-3 text-center">
         <div className="col-3 col-md-3 col-lg-2">
           <p className="fw-bold mx-auto text-center mb-0">உறவாய் இணைவோம்!</p>
           <img
@@ -49,6 +50,7 @@ const Home = () => {
 
 
 <Seyalthitam/>
+<Count/>
     </div>
   );
 };

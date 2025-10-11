@@ -12,6 +12,11 @@ import Bdoner from "./pages/Bdoner";
 import Bneedf from "./pages/Bneedf";
 import BloodRequestsPage from "./pages/BloodRequestsPage";
 import DonorListPage from "./pages/DonorListPage";
+import Footer from "./pages/Footer";
+import Img from "./pages/Img";
+import Count from "./pages/Count";
+import Join from "./pages/Join";
+import NewRegistersPage from "./pages/NewRegistersPage";
 
 function App() {
   return (
@@ -27,8 +32,15 @@ function App() {
         <Route path="/Bneedf" element={<Bneedf />}></Route>
         <Route path="/BloodRequests" element={<BloodRequestsPage />}></Route>
         <Route path="/DonorList" element={<DonorListPage />}></Route>
+        <Route path="/Footer" element={<Footer />}></Route>
+        <Route path="/Img" element={<Img />}></Route>
+        <Route path="/Count" element={<Count />}></Route>
+        <Route path="/Join" element={<Join />}></Route>
+        <Route path="/NewRegisters" element={<NewRegistersPage />}></Route>
         
       </Routes>
+      <Img />
+      <Footer />
     </div>
   );
 }

@@ -64,8 +64,8 @@ const BloodRequestsPage = () => {
   };
 
   return (
-    <div className="container py-3">
-       <div className="row  text-center">
+    <div className="container ">
+       <div className="row  text-center mt-3">
               <div className="col-3 col-md-3 col-lg-2">
                 <p className="fw-bold mx-auto text-center mb-0">உறவாய் இணைவோம்!</p>
                 <img
@@ -112,7 +112,7 @@ const BloodRequestsPage = () => {
               value={filters.bloodGroup}
               onChange={handleFilterChange}
             >
-              <option value="">ரத்த வகை</option>
+              <option value="">இரத்த வகை</option>
               {["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"].map((bg) => (
                 <option key={bg} value={bg}>{bg}</option>
               ))}
@@ -234,7 +234,7 @@ const BloodRequestsPage = () => {
           </h5>
 
           <p><strong>பாலினம்:</strong> {selectedRequest.gender}</p>
-          <p><strong>ரத்த வகை:</strong> {selectedRequest.bloodGroup}</p>
+          <p><strong>இரத்த வகை:</strong> {selectedRequest.bloodGroup}</p>
           <p><strong>அளவு (Units):</strong> {selectedRequest.units}</p>
           <p><strong>தேவைக்கான காரணம்:</strong> {selectedRequest.reason}</p>
           <p><strong>தொலைபேசி எண்:</strong> {selectedRequest.phone}</p>

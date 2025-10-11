@@ -36,7 +36,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg color fixed-top shadow ">
+    <nav className="navbar navbar-expand-lg color fixed-top  shadow ">
       <div className="container-fluid">
         <img
           src={aaa}
@@ -70,8 +70,8 @@ const Header = () => {
               </button>
             </li>
             <li className="nav-item">
-              <button className="nav-link btn text-start text-light" onClick={() => handleNavClick("/Help")}>
-                <i className="bi bi-hand-thumbs-up-fill me-2 text-danger"></i> உதவி செய்ய
+              <button className="nav-link btn text-start text-light" onClick={() => handleNavClick("/NewRegisters")}>
+                <i className="bi bi-hand-thumbs-up-fill me-2 text-danger"></i> உறுப்பினர்கள் 
               </button>
             </li>
             <li className="nav-item">

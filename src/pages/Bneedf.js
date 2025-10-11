@@ -123,8 +123,8 @@ const Bneedf = () => {
   };
 
   return (
-    <div className="container py-3">
-     <div className="container text-center bg-white mt-2 ">
+    <div className="container ">
+     <div className="container text-center bg-white mt-3 ">
              <div className="row  ">
                <div className="col-3 col-md-3  col-lg-2">
                  <p className="fw-bold mx-auto text-center mb-0">உறவாய் இணைவோம்!</p>
@@ -172,7 +172,7 @@ const Bneedf = () => {
         {/* Step 1: Blood Group */}
         {step === 1 && (
           <div className="text-center">
-            <label className="fw-bold">உங்கள் ரத்த வகையைத் தேர்ந்தெடுக்கவும்</label>
+            <label className="fw-bold">உங்கள் இரத்த வகையைத் தேர்ந்தெடுக்கவும்</label>
             <select
               name="bloodGroup"
               value={formData.bloodGroup}
@@ -180,7 +180,7 @@ const Bneedf = () => {
               className="form-select my-3"
               required
             >
-              <option value="">-- ரத்த வகை --</option>
+              <option value="">-- இரத்த வகை --</option>
               <option value="A+">A+</option>
               <option value="A-">A-</option>
               <option value="B+">B+</option>
@@ -210,7 +210,7 @@ const Bneedf = () => {
         </option>
       ))}
     </select>
-    <button className="btn btn-secondary me-2" onClick={prevStep}>Back</button>
+    <button className="btn btn-secondary me-2" onClick={prevStep}>பின் செல்</button>
     <button className="btn btn-primary" onClick={nextStep}>அடுத்து</button>
   </div>
 )}
@@ -232,8 +232,8 @@ const Bneedf = () => {
           <option key={state} value={state}>{state}</option>
         ))}
     </select>
-    <button className="btn btn-secondary me-2" onClick={prevStep}>Back</button>
-    <button className="btn btn-primary" onClick={nextStep}>Next</button>
+    <button className="btn btn-secondary me-2" onClick={prevStep}>பின் செல்</button>
+    <button className="btn btn-primary" onClick={nextStep}>அடுத்து</button>
   </div>
 )}
 
@@ -254,8 +254,8 @@ const Bneedf = () => {
           <option key={district} value={district}>{district}</option>
         ))}
     </select>
-    <button className="btn btn-secondary me-2" onClick={prevStep}>Back</button>
-    <button className="btn btn-primary" onClick={nextStep}>Next</button>
+    <button className="btn btn-secondary me-2" onClick={prevStep}>பின் செல்</button>
+    <button className="btn btn-primary" onClick={nextStep}>அடுத்து</button>
   </div>
 )}
 
@@ -280,8 +280,8 @@ const Bneedf = () => {
           )
         )}
     </select>
-    <button className="btn btn-secondary me-2" onClick={prevStep}>Back</button>
-    <button className="btn btn-primary" onClick={nextStep}>Next</button>
+    <button className="btn btn-secondary me-2" onClick={prevStep}>பின் செல்</button>
+    <button className="btn btn-primary" onClick={nextStep}>அடுத்து</button>
   </div>
 )}
 
@@ -329,7 +329,7 @@ const Bneedf = () => {
                     className="form-select"
                     required
                   >
-                    <option value="">-- பாலினம் --</option>
+                    <option value="">பாலினம் *</option>
                     <option value="Male">ஆண்</option>
                     <option value="Female">பெண்</option>
                     <option value="Other">மற்றவை</option>
@@ -340,7 +340,7 @@ const Bneedf = () => {
 
             {/* Units + Reason */}
             <div className="row mb-3 g-2">
-              <div className="col-6">
+              <div className="">
                 <div className="input-group">
                   <span className="input-group-text bg-danger text-white"><FaTint /></span>
                   <input
@@ -349,16 +349,17 @@ const Bneedf = () => {
                     value={formData.units}
                     onChange={handleChange}
                     className="form-control"
-                    placeholder="அளவு *"
+                    placeholder="அளவு (Units) *"
                     required
                   />
                 </div>
               </div>
-              <div className="col-6">
+             
+            </div>
+ <div className="mb-3">
                 <div className="input-group">
                   <span className="input-group-text bg-danger text-white"><FaNotesMedical /></span>
-                  <input
-                    type="text"
+                  <textarea
                     name="reason"
                     value={formData.reason}
                     onChange={handleChange}
@@ -368,8 +369,9 @@ const Bneedf = () => {
                   />
                 </div>
               </div>
-            </div>
-
+            
+          
+            
             {/* Phone */}
             <div className="mb-3 input-group">
               <span className="input-group-text bg-danger text-white"><FaPhone /></span>
@@ -460,13 +462,13 @@ const Bneedf = () => {
                 required
               />
               <label className="form-check-label">
-                நான் கொடுக்கிய தகவல்கள் உண்மை மற்றும் சரியானவை என்பதை உறுதி செய்கிறேன்
+                நான் கொடுத்த தகவல்கள் உண்மை மற்றும் சரியானவை என்பதை உறுதி செய்கிறேன்
               </label>
             </div>
 
             <div className="d-flex justify-content-between">
               <button className="btn btn-secondary" type="button" onClick={prevStep}>
-                Back
+                பின் செல்
               </button>
               <button className="btn btn-success fw-bold" type="submit">
                 சமர்ப்பிக்கவும்

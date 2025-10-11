@@ -9,7 +9,7 @@ const Blood = () => {
     const navigate = useNavigate();
   return (
     <div className="container">
-      <div className="container text-center bg-white mt-2 ">
+      <div className="container text-center bg-white mt-3">
         <div className="row  ">
           <div className="col-3 col-md-3  col-lg-2">
             <p className="fw-bold mx-auto text-center mb-0">உறவாய் இணைவோம்!</p>
@@ -51,23 +51,23 @@ const Blood = () => {
   {/* 🩸 Button 1: Blood Request */}
   <button onClick={()=>navigate("/Bd")} className="btn btn-danger  w-100 fw-bold rounded-3 mb-3 d-flex align-items-center justify-content-center mx-auto px-4  ">
     <FaTint className="fs-5 me-2" />
-    இலவச குருதித் தேவைக்கு
+    குருதித் தேவைக்கு
   </button>
 
   {/* 🤝 Button 2: Become a Donor */}
   <button onClick={()=>navigate("/Bdoner")} className="btn btn-danger w-100  fw-bold rounded-3 mb-3 d-flex align-items-center justify-content-center mx-auto px-4  gap-2">
-    <FaHandHoldingHeart className="fs-5 " />
-    குருதிக்கொடையாளராக இணைய
+    <FaHandHoldingHeart className="fs-5 me-2" />
+    குருதிக்கொடுத்து உதவ 
   </button>
   <button onClick={()=>navigate("/BloodRequests")} className="btn btn-danger w-100  fw-bold rounded-3 mb-3 d-flex align-items-center justify-content-center mx-auto px-4  gap-2">
     <FaHandHoldingHeart className="fs-5 " />
-    குருதிக்கொடுத்து உதவ
+    குருதி தேவை படுவோர்
   </button>
 </div>
-<div className="container text-center mb-3">
+<div className=" text-center mb-3">
   <iframe
-  width="79%"
-  height="200"
+  width="70%"
+  height="220"
   src="https://www.youtube.com/embed/CPicUcQgq5I"
   title="Blood Donation Awareness Video"
   frameBorder="0"

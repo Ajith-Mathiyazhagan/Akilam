@@ -59,10 +59,10 @@ const DonorListPage = () => {
   };
 
   return (
-    <div className="container py-3">
-      {/* Header */}
-     <div className="row text-center">
-             <div className="col-3 col-md-3 col-lg-2">
+    <div className="container my-3">
+      <div className="container text-center ">
+<div className=" row text-center">
+             <div className=" col-3 col-md-3 col-lg-2">
                <p className="fw-bold mx-auto text-center mb-0">உறவாய் இணைவோம்!</p>
                <img
                  src={na}
@@ -93,15 +93,17 @@ const DonorListPage = () => {
                />
              </div>
            </div>
-        <h2 className="text-center text-danger fw-bold ">
+        <h4 className="text-center text-danger fw-bold ">
        அகிலம் நண்பர்கள் அறக்கட்டளை
-     </h2>
+     </h4>
       <h6 className="text-center fw-light">
         உறவாய் இணைவோம் உதிரம் கொடுத்து பல உயிர்களை காப்போம் !{" "}
       </h6>
       <h4 className="text-center text-danger mb-2 fw-bold ">
       இரத்த தானம் செய்வோரை அறிய
      </h4>
+      </div>
+     
       {/* Filters */}
       {!selectedDonor && (
         <div className="row mb-4">
@@ -112,7 +114,7 @@ const DonorListPage = () => {
               value={filters.bloodGroup}
               onChange={handleFilterChange}
             >
-              <option value="">ரத்த வகை</option>
+              <option value="">இரத்த வகை</option>
               {["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"].map((bg) => (
                 <option key={bg} value={bg}>{bg}</option>
               ))}
@@ -198,8 +200,8 @@ const DonorListPage = () => {
                     <FaTint className="fs-1 text-danger" />
                     <div>
                       <h5 className="mb-1">{donor.name} ({donor.age} வயது)</h5>
-                      <p className="mb-1">ரத்த வகை: {donor.bloodGroup}</p>
-                      <p className="mb-1">தொலைபேசி:<span className="fw-bold text-danger">{donor.phone}</span> </p>
+                      <p className="mb-1">இரத்த வகை:<span className="fw-bold text-danger ms-1">{donor.bloodGroup}</span></p>
+                      <p className="mb-1">தொலைபேசி:<span className="fw-bold text-danger ms-1">{donor.phone}</span> </p>
                       <p className="mb-1">{donor.district}, {donor.constituency}</p>
                     </div>
                   </div>
@@ -214,25 +216,27 @@ const DonorListPage = () => {
 
       {/* Selected Donor Details */}
       {selectedDonor && (
-        <div className="card p-4 shadow-sm">
-          <button
-            className="btn btn-secondary mb-3"
-            onClick={() => setSelectedDonor(null)}
-          >
-            மீண்டும் பட்டியலுக்கு
-          </button>
+        <div className="card p-4 shadow-sm border border-danger">
+         
 
           <h5 className="text-danger fw-bold mb-3">{selectedDonor.name} ({selectedDonor.age} வயது)</h5>
-          <p><strong>ரத்த வகை:</strong> {selectedDonor.bloodGroup}</p>
+          <p><strong>இரத்த வகை:</strong><span className="fw-bold text-danger ms-1">{selectedDonor.bloodGroup}</span></p>
           <p><strong>தந்தை பெயர்:</strong> {selectedDonor.fatherName}</p>
           <p><strong>தாய் பெயர்:</strong> {selectedDonor.motherName}</p>
-          <p><strong>தொலைபேசி:</strong> {selectedDonor.phone}</p>
+          <p><strong>தொலைபேசி:</strong><span className="fw-bold text-danger ms-1">{selectedDonor.phone}</span></p>
           <p><strong>முகவரி:</strong> {selectedDonor.address}</p>
           {selectedDonor.aadhaar && <p><strong>ஆதார்:</strong> {selectedDonor.aadhaar}</p>}
           {selectedDonor.constituency && <p><strong>தொகுதி:</strong> {selectedDonor.constituency}</p>}
           {selectedDonor.createdAt && (
             <p><strong>சமர்ப்பிக்கப்பட்ட தேதி:</strong> {selectedDonor.createdAt.toDate().toLocaleString("ta-IN")}</p>
+            
           )}
+           <button
+            className="btn btn-secondary mb-1"
+            onClick={() => setSelectedDonor(null)}
+          >
+            மீண்டும் பட்டியலுக்கு
+          </button>
         </div>
       )}
     </div>

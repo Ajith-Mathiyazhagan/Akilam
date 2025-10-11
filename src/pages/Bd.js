@@ -8,7 +8,7 @@ const Bd = () => {
   const navigate = useNavigate();   
   return (
     <div className="container">
-      <div className="container text-center bg-white mt-2 ">
+      <div className="container text-center bg-white mt-3">
         <div className="row  ">
           <div className="col-3 col-md-3  col-lg-2">
             <p className="fw-bold mx-auto text-center mb-0">உறவாய் இணைவோம்!</p>
@@ -56,7 +56,7 @@ const Bd = () => {
   {/* 🤝 Button 2: Become a Donor */}
   <button onClick={()=>navigate("/DonorList")} className="btn btn-danger w-100  fw-bold rounded-3 mb-3 d-flex align-items-center justify-content-center mx-auto px-4  gap-2">
     <FaHandHoldingHeart className="fs-5 " />
-    குருதிக்கொடையாளர்களை தேட ..
+    கொடையாளர்களை தேட
   </button>
 </div>
 
