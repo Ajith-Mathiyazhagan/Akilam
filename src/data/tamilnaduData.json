@@ -1,0 +1,31 @@
+{
+  "India": {
+    "Tamil Nadu": {
+      "திருவள்ளூர்": ["கும்மிடிப்பொண்டி", "பொன்னேரி", "திருவள்ளூர்", "பூந்தமல்லி"],
+      "சென்னை": ["சைதாப்பேட்டை", "அண்ணாநகர்", "தியாகராயநகர்", "மயிலாப்பூர்"],
+      "காஞ்சிபுரம்": ["செங்கல்பட்டு", "மாதவரம்", "பாலவாக்கம்", "காஞ்சிபுரம்"],
+      "வேலூர்": ["வேலூர்", "ஆம்பூர்", "குடியாத்தம்", "அரக்கோணம்"],
+      "திருவண்ணாமலை": ["ஆரணி", "செங்கம்", "திருவண்ணாமலை", "போளூர்", "கண்டூர்"],
+      "சேலம்": ["சேலம் வடக்கு", "சேலம் தெற்கு", "ஓமலூர்", "எடப்பாடி"],
+      "கோயம்புத்தூர்": ["கோயம்புத்தூர் வடக்கு", "கோயம்புத்தூர் தெற்கு", "சுலூர்", "மெட்டுப்பாளையம்"],
+      "மதுரை": ["மதுரை மத்தியம்", "மதுரை கிழக்கு", "மதுரை மேற்கு", "திருமங்கலம்"]
+    }
+  },
+  "germany": {
+    "Bavaria": {
+      "Munich": ["Altstadt-Lehel", "Ludwigsvorstadt-Isarvorstadt", "Maxvorstadt", "Schwabing-West"],
+      "Nuremberg": ["Mitte", "Südost", "Nordwest", "West"],
+      "Augsburg": ["Innenstadt", "Lechhausen", "Hochzoll", "Pfersee"]
+    },
+    "Berlin": {
+      "Mitte": ["Tiergarten", "Wedding", "Moabit", "Hansaviertel"],
+      "Friedrichshain-Kreuzberg": ["Friedrichshain", "Kreuzberg"],
+      "Charlottenburg-Wilmersdorf": ["Charlottenburg", "Wilmersdorf", "Halensee"]
+    },
+    "Hamburg": {
+      "Altona": ["Altona-Altstadt", "Ottensen", "Bahrenfeld"],
+      "Eimsbüttel": ["Eimsbüttel", "Hoheluft-West", "Rotherbaum"],
+      "Hamburg-Mitte": ["St. Pauli", "HafenCity", "Neustadt"]
+    }
+  }
+}

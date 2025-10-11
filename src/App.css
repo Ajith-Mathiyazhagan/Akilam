@@ -1,38 +1,158 @@
-.App {
-  text-align: center;
+
+
+.navbar{
+background-color: #220963;
+  
+  position: fixed;
+}
+body {
+  padding-top: 60px;
+   /* adjust based on navbar height */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* 🔹 Image hover zoom only */
+.img-wrapper {
+  overflow: hidden;
 }
+.img-wrapper img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.img-wrapper img:hover {
+  transform: scale(1.1);
+}
+.landingimg{
+border-radius: 40px 40px 40px 0px;
+}
+.bg{
+    
+  background-size: 400% 400%;
+  
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+}
+/* marqueee */
+.marquee {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.App-link {
-  color: #61dafb;
+.marquee-inner {
+  display: flex;
+  animation: marquee 50s linear infinite;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* moves half because we duplicated */
+}
+
+
+/* Add this to your CSS file */
+.card-hover {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card-hover:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 1.5rem 2.5rem rgba(255, 0, 25, 0.15), 0 0.5rem 1rem rgba(0,0,0,0.05);
+}
+/* Add this to your CSS file */   
+.heading-underline {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0.5rem;
+  cursor: default;
+}
+
+.heading-underline::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;                   /* underline thickness */
+  background-color: #0d6efd;     /* Bootstrap primary */
+  border-radius: 2px;
+  transition: width 0.5s ease;   /* animation */
+}
+
+.heading-underline:hover::after {
+  width: 260px;                    /* final width on hover */
+}
+
+.color{
+  background-color: #121212;
+
+}
+/* Make only the navbar-toggler icon light (white) */
+.navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+
+.br {
+  border-radius: 70px;
+}
+
+/* Responsive text size */
+p {
+  font-size: clamp(9px, 2.5vw, 18px);
+}
+
+/* Logo smaller in desktop */
+@media (min-width: 992px) {
+  .logo-img {
+    width: 60% !important;
   }
 }
+
+/* For tablets - medium size */
+@media (min-width: 768px) and (max-width: 991px) {
+  .logo-img {
+    width: 75% !important;
+  }
+}
+/* 🔷 Main Tamil Title */
+.main-tamil-title {
+  font-family: "Baloo Thambi 2", "Noto Sans Tamil", sans-serif;
+  font-size: clamp(26px, 5vw, 50px);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #0047ab, #007bff);
+   -webkit-background-clip: text;
+   background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/*  Sub Tamil Title */
+.sub-tamil-title {
+  font-family: "Noto Sans Tamil", "Baloo Thambi 2", sans-serif;
+  font-size: clamp(16px, 3vw, 28px);
+  font-weight: 700;
+  color: #dc3545; /* Bootstrap danger red */
+  margin-top: -5px;
+  letter-spacing: 0.5px;
+}
+.tamil-btn {
+  font-family: "Noto Sans Tamil", "Baloo Thambi 2", sans-serif;
+  font-size: clamp(12px, 2.2vw, 16px);
+  border-radius: 30px;
+  padding: 10px 18px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* .tamil-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.tamil-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+} */
