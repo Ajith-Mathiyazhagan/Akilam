@@ -1,4 +1,4 @@
-import React from "react";
+import {useEffect} from "react";
 import logo from "../assets/logoakilam.png";
 import mt from "../assets/mm.jpg";
 import na from "../assets/na.jpg";
@@ -6,6 +6,11 @@ import { FaTint, FaHandHoldingHeart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const Blood = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100); // 100ms delay
+  }, []);
     const navigate = useNavigate();
   return (
     <div className="container">
@@ -57,7 +62,7 @@ const Blood = () => {
   {/* 🤝 Button 2: Become a Donor */}
   <button onClick={()=>navigate("/Bdoner")} className="btn btn-danger w-100  fw-bold rounded-3 mb-3 d-flex align-items-center justify-content-center mx-auto px-4  gap-2">
     <FaHandHoldingHeart className="fs-5 me-2" />
-    குருதிக்கொடுத்து உதவ 
+    கொடையாளர் பதிவு
   </button>
   <button onClick={()=>navigate("/BloodRequests")} className="btn btn-danger w-100  fw-bold rounded-3 mb-3 d-flex align-items-center justify-content-center mx-auto px-4  gap-2">
     <FaHandHoldingHeart className="fs-5 " />
@@ -66,7 +71,7 @@ const Blood = () => {
 </div>
 <div className=" text-center mb-3">
   <iframe
-  width="70%"
+  width="84%"
   height="220"
   src="https://www.youtube.com/embed/CPicUcQgq5I"
   title="Blood Donation Awareness Video"

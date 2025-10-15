@@ -1,14 +1,24 @@
-import React from "react";
+import {useEffect} from "react";
 import logo from "../assets/logoakilam.png";
 import mt from "../assets/mm.jpg";
 import na from "../assets/na.jpg";
 import Seyalthitam from "./Seyalthitam";
 import Count from "./Count";
+import Img from "../pages/Img"
 
 
 const Home = () => {
+useEffect(() => {
+  setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 100); // 100ms delay
+}, []);
+
   return (
-    <div className="container text-center">
+    <div className=" text-center">
+      <div className="text-center container">
+
+      
       <div className="row mt-3 text-center">
         <div className="col-3 col-md-3 col-lg-2">
           <p className="fw-bold mx-auto text-center mb-0">உறவாய் இணைவோம்!</p>
@@ -51,6 +61,8 @@ const Home = () => {
 
 <Seyalthitam/>
 <Count/>
+</div>
+<Img/>
     </div>
   );
 };

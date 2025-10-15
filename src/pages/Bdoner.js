@@ -7,6 +7,12 @@ import mt from "../assets/mm.jpg";
 import na from "../assets/na.jpg";
 
 const Bdoner = () => {
+  useEffect(() => {
+  setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 100); // 100ms delay
+}, []);
+
   const [step, setStep] = useState(1);
 
   const [formData, setFormData] = useState({
@@ -93,7 +99,7 @@ const Bdoner = () => {
     tamilnaduData[formData.country]?.[formData.state]?.[formData.district];
 
   return (
-    <div className="container ">
+    <div className="container mb-3">
       <div className="container text-center bg-white mt-3">
               <div className="row  ">
                 <div className="col-3 col-md-3  col-lg-2">
@@ -132,7 +138,7 @@ const Bdoner = () => {
             <h6 className="text-center fw-light">
               உறவாய் இணைவோம் உதிரம் கொடுத்து பல உயிர்களை காப்போம் !{" "}
             </h6>
-      <h4 className="mb-3 text-center text-danger fw-bold">இரத்ததானம் செய்யும் பதிவு</h4>
+      <h5 className="mb-3 text-center text-danger fw-bold">குருதிக்கொடையாளரக பதிவு செய்ய</h5>
       <form className="border p-4 rounded shadow bg-light" onSubmit={handleSubmit}>
         {/* Step 1: Blood Group */}
         {step === 1 && (
@@ -173,8 +179,8 @@ const Bdoner = () => {
                 <option key={c} value={c}>{c}</option>
               ))}
             </select>
-            <button type="button" className="btn btn-secondary me-2" onClick={prevStep}>Back</button>
-            <button type="button" className="btn btn-primary" onClick={nextStep}>Next</button>
+            <button type="button" className="btn btn-secondary me-2" onClick={prevStep}>பின் செல்</button>
+            <button type="button" className="btn btn-primary" onClick={nextStep}>அடுத்து</button>
           </div>
         )}
 
@@ -195,8 +201,8 @@ const Bdoner = () => {
                   <option key={s} value={s}>{s}</option>
                 ))}
             </select>
-            <button type="button" className="btn btn-secondary me-2" onClick={prevStep}>Back</button>
-            <button type="button" className="btn btn-primary" onClick={nextStep}>Next</button>
+            <button type="button" className="btn btn-secondary me-2" onClick={prevStep}>பின் செல்</button>
+            <button type="button" className="btn btn-primary" onClick={nextStep}>அடுத்து</button>
           </div>
         )}
 
@@ -217,8 +223,8 @@ const Bdoner = () => {
                   <option key={d} value={d}>{d}</option>
                 ))}
             </select>
-            <button type="button" className="btn btn-secondary me-2" onClick={prevStep}>Back</button>
-            <button type="button" className="btn btn-primary" onClick={nextStep}>Next</button>
+            <button type="button" className="btn btn-secondary me-2" onClick={prevStep}>பின் செல்</button>
+            <button type="button" className="btn btn-primary" onClick={nextStep}>அடுத்து</button>
           </div>
         )}
 
@@ -282,14 +288,7 @@ const Bdoner = () => {
               placeholder="வயது *"
               required
             />
-            <input
-              className="form-control mb-2"
-              type="date"
-              name="dob"
-              value={formData.dob}
-              onChange={handleChange}
-              required
-            />
+            
             <input
               className="form-control mb-2"
               type="tel"

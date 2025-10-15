@@ -24,16 +24,21 @@ import h18 from "../assets/h (18).jpg";
 import h19 from "../assets/h (19).jpg";
 import h20 from "../assets/h (20).jpg";
 import h21 from "../assets/h (21).jpg";
+import w from "../assets/w (1).jpg";
+import w1 from "../assets/w (1).jpg";
+import w2 from "../assets/w (2).jpg";
+import w3 from "../assets/w (3).jpg";
+import w4 from "../assets/w (4).jpg";
 
 const images = [
-  annan, annan2, imm, h1, h2, h3, h5, h6, h7, h8, h9, h10, h11, h12, 
-  h13, h14, h15, h16, h17, edu, h18, h19, h20, h21
+  w,annan, annan2, imm,w1, h1, h2, h3,w4, h5, h6, h7, h8, h9, h10, h11, h12, 
+  h13, h14,w2, h15, h16, h17, edu, h18,w3, h19, h20, h21
 ];
 
 const Img = () => {
   return (
     <div
-      className="container-fluid my-2"
+      className="container-fluid mb-2"
       style={{ overflow: "hidden", padding: "10px 0 0 " }}
     >
       <div

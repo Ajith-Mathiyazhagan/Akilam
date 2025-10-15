@@ -8,6 +8,12 @@ import mt from "../assets/mm.jpg";
 import na from "../assets/na.jpg";
 
 const BloodRequestsPage = () => {
+  useEffect(() => {
+  setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 100); // 100ms delay
+}, []);
+
   const [requests, setRequests] = useState([]);
   const [selectedRequest, setSelectedRequest] = useState(null);
 
@@ -100,6 +106,9 @@ const BloodRequestsPage = () => {
          <h2 className="main-tamil-title text-center mt-2">
         அகிலம் நண்பர்கள் அறக்கட்டளை
       </h2>
+      <h6 className="text-center fw-light">
+        உறவாய் இணைவோம் உதிரம் கொடுத்து பல உயிர்களை காப்போம் !{" "}
+      </h6>
       <h3 className="text-center text-danger fw-bold mb-4">இரத்த தேவைகள்</h3>
 
       {/* Filters */}
@@ -221,28 +230,23 @@ const BloodRequestsPage = () => {
 
       {/* Selected Request Modal */}
       {selectedRequest && (
-        <div className="card p-4 shadow-sm">
-          <button
-            className="btn btn-secondary mb-3"
-            onClick={() => setSelectedRequest(null)}
-          >
-            மீண்டும் பட்டியலுக்கு
-          </button>
+        <div className="card p-4  shadow-sm mb-3">
+          
 
           <h5 className="text-danger fw-bold mb-3">
             {selectedRequest.name} ({selectedRequest.age} வயது)
           </h5>
 
           <p><strong>பாலினம்:</strong> {selectedRequest.gender}</p>
-          <p><strong>இரத்த வகை:</strong> {selectedRequest.bloodGroup}</p>
+          <p><strong>இரத்த வகை:</strong> <span className="fw-bold text-danger">{selectedRequest.bloodGroup}</span></p>
           <p><strong>அளவு (Units):</strong> {selectedRequest.units}</p>
           <p><strong>தேவைக்கான காரணம்:</strong> {selectedRequest.reason}</p>
-          <p><strong>தொலைபேசி எண்:</strong> {selectedRequest.phone}</p>
+          <p><strong>தொலைபேசி எண்:</strong><span className="fw-bold text-danger">{selectedRequest.phone}</span> </p>
           {selectedRequest.helperName && (
             <p><strong>உதவியாளர் பெயர்:</strong> {selectedRequest.helperName}</p>
           )}
           {selectedRequest.helperPhone && (
-            <p><strong>உதவியாளர் தொலைபேசி:</strong> {selectedRequest.helperPhone}</p>
+            <p><strong>உதவியாளர் தொலைபேசி:</strong> <span className="fw-bold text-danger">{selectedRequest.helperPhone}</span> </p>
           )}
           <p><strong>மருத்துவமனையின் முகவரி:</strong> {selectedRequest.hospitalAddress}</p>
           {selectedRequest.refName && <p><strong>Reference பெயர்:</strong> {selectedRequest.refName}</p>}
@@ -252,7 +256,14 @@ const BloodRequestsPage = () => {
               <strong>சமர்ப்பிக்கப்பட்ட தேதி:</strong>{" "}
               {selectedRequest.createdAt.toDate().toLocaleString("ta-IN")}
             </p>
+            
           )}
+          <button
+            className="btn btn-secondary "
+            onClick={() => setSelectedRequest(null)}
+          >
+            மீண்டும் பட்டியலுக்கு
+          </button>
         </div>
       )}
     </div>

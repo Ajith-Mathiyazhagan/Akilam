@@ -8,7 +8,6 @@ import {
   FaUser,
   FaPhone,
   FaCalendarAlt,
-  
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import tamilnaduData from "../data/tamilnaduData.json";
@@ -16,6 +15,7 @@ import tamilnaduData from "../data/tamilnaduData.json";
 const Join = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(2);
+  const [showWelcome, setShowWelcome] = useState(false); // ✅ Modal state
 
   const [formData, setFormData] = useState({
     country: "",
@@ -25,6 +25,7 @@ const Join = () => {
     name: "",
     age: "",
     gender: "",
+    dateofbirth:"",
     fatherName: "",
     motherName: "",
     occupation: "",
@@ -73,27 +74,7 @@ const Join = () => {
         createdAt: serverTimestamp(),
       });
 
-      alert("✅ உங்கள் தகவல்கள் வெற்றிகரமாக சமர்ப்பிக்கப்பட்டன!");
-      navigate("/");
-
-      setFormData({
-        country: "",
-        state: "",
-        district: "",
-        constituency: "",
-        name: "",
-        age: "",
-        gender: "",
-        fatherName: "",
-        motherName: "",
-        occupation: "",
-        phone: "",
-        emergencyPhone: "",
-        adhar: "",
-        address: "",
-        consent: false,
-      });
-      setStep(2);
+      setShowWelcome(true); // Show custom modal
     } catch (error) {
       alert("❌ சமர்ப்பிக்கும்போது பிழை ஏற்பட்டது!");
       console.error(error);
@@ -101,7 +82,7 @@ const Join = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container mb-3">
       {/* Header Section with logo */}
       <div className="container text-center bg-white mt-3">
         <div className="row">
@@ -124,7 +105,6 @@ const Join = () => {
               className="img-fluid logo-img mb-1"
               style={{ width: "90px" }}
             />
-            <p className="fw-bold text-danger mt-2">AKILAM FOUNDATION</p>
           </div>
 
           <div className="col-1 col-md-1 col-lg-2"></div>
@@ -141,28 +121,29 @@ const Join = () => {
       </div>
 
       {/* Form Section */}
-      <div className="text-center bg-white mt-2">
-        <h2 className="main-tamil-title text-center mt-2">
+      <div className="text-center bg-white ">
+        <h2 className="main-tamil-title text-center mt-0">
           அகிலம் நண்பர்கள் அறக்கட்டளை
         </h2>
         <h4 className="sub-tamil-title text-center">தமிழ்நாடு</h4>
-        <h5 className="text-center text-primary fw-bold mt-2">
+        
+        <p className="text-center">உறவாய் இணைவோம்! உலகையே காப்போம்!</p>
+
+        <div className="border p-2 rounded shadow bg-light">
+          <h5 className="text-center text-primary fw-bold mt-0">
           அகிலம் நண்பர்கள் உறுப்பினர் படிவம்
         </h5>
-        <p>உறவாய் இணைவோம்! உலகையே காப்போம்!</p>
-
-        <div className="border p-4 rounded shadow bg-light">
           {/* Step 2: Country */}
           {step === 2 && (
             <div className="text-center">
-              <label className="fw-bold">நாடு</label>
+              
               <select
                 name="country"
                 value={formData.country}
                 onChange={handleChange}
                 className="form-select my-3"
               >
-                <option value="">-- நாடு தேர்வு செய்யவும் --</option>
+                <option value="">-- நாட்டை தேர்வு செய்யவும் --</option>
                 {Object.keys(tamilnaduData).map((country) => (
                   <option key={country} value={country}>
                     {country}
@@ -178,7 +159,7 @@ const Join = () => {
           {/* Step 3: State */}
           {step === 3 && (
             <div className="text-center">
-              <label className="fw-bold">மாநிலம்</label>
+            
               <select
                 name="state"
                 value={formData.state}
@@ -206,7 +187,7 @@ const Join = () => {
           {/* Step 4: District */}
           {step === 4 && (
             <div className="text-center">
-              <label className="fw-bold">மாவட்டம்</label>
+           
               <select
                 name="district"
                 value={formData.district}
@@ -236,7 +217,8 @@ const Join = () => {
           {/* Step 5: Constituency */}
           {step === 5 && (
             <div className="text-center">
-              <label className="fw-bold">தொகுதி</label>
+            
+            
               <select
                 name="constituency"
                 value={formData.constituency}
@@ -266,6 +248,7 @@ const Join = () => {
           {/* Step 6: Main Form */}
           {step === 6 && (
             <form onSubmit={handleSubmit}>
+              {/* Name */}
               <div className="mb-3 input-group">
                 <span className="input-group-text bg-danger text-white">
                   <FaUser />
@@ -281,6 +264,7 @@ const Join = () => {
                 />
               </div>
 
+              {/* Age + Gender */}
               <div className="row mb-3 g-2">
                 <div className="col-6">
                   <div className="input-group">
@@ -298,6 +282,7 @@ const Join = () => {
                     />
                   </div>
                 </div>
+                
                 <div className="col-6">
                   <div className="input-group">
                     <span className="input-group-text bg-danger text-white">
@@ -318,108 +303,135 @@ const Join = () => {
                   </div>
                 </div>
               </div>
+
+              {/* DOB */}
+             <div className="input-group mb-3">
+  <span className="input-group-text bg-danger text-white">
+    <FaCalendarAlt />
+  </span>
+  <input
+    type="date"
+    name="dateofbirth"
+    value={formData.dateofbirth}
+    onChange={handleChange}
+    className="form-control"
+    required
+  />
+  <label className="form-label position-absolute ms-5" style={{ top: '5px', pointerEvents: 'none', color: '#656464ff' }}>
+    பிறந்த தேதி *
+  </label>
+</div>
+
+
+              {/* Father + Mother */}
+              <div className="input-group mb-3">
+                <span className="input-group-text bg-danger text-white">
+                  <FaUser />
+                </span>
+                <input
+                  type="text"
+                  name="fatherName"
+                  value={formData.fatherName}
+                  onChange={handleChange}
+                  className="form-control"
+                  placeholder="தந்தை பெயர் *"
+                  required
+                />
+              </div>
+              <div className="input-group mb-3">
+                <span className="input-group-text bg-danger text-white">
+                  <FaUser />
+                </span>
+                <input
+                  type="text"
+                  name="motherName"
+                  value={formData.motherName}
+                  onChange={handleChange}
+                  className="form-control"
+                  placeholder="தாய் பெயர் *"
+                  required
+                />
+              </div>
+
+              {/* Occupation */}
               <div className="input-group ">
+                <span className="input-group-text mb-3 bg-danger text-white">
+                  <i className="bi bi-award-fill"></i>
+                </span>
+                <input
+                  type="text"
+                  name="occupation"
+                  value={formData.occupation}
+                  onChange={handleChange}
+                  className="form-control mb-3"
+                  placeholder="தொழில் *"
+                  required
+                />
+              </div>
+
+              {/* Phone + Emergency */}
+              <div className="input-group ">
+                <span className="input-group-text mb-3 bg-danger text-white">
+                  <FaPhone />
+                </span>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="form-control mb-3"
+                  placeholder="தொலைபேசி எண் *"
+                  required
+                />
+              </div>
+              <div className="input-group ">
+                <span className="input-group-text mb-3 bg-danger text-white">
+                  <FaPhone />
+                </span>
+                <input
+                  type="tel"
+                  name="emergencyPhone"
+                  value={formData.emergencyPhone}
+                  onChange={handleChange}
+                  className="form-control mb-3"
+                  placeholder="அவசர தொலைபேசி எண் *"
+                  required
+                />
+              </div>
+
+              {/* Adhar */}
+              <div className="input-group">
                 <span className="input-group-text mb-3 bg-danger text-white">
                   <FaUser />
                 </span>
                 <input
-                type="text"
-                name="fatherName"
-                value={formData.fatherName}
-                onChange={handleChange}
-                className="form-control mb-3"
-                placeholder="தந்தை பெயர் *"
-                required
-              />
-                </div>
-                <div className="input-group ">
-                  <span className="input-group-text mb-3 bg-danger text-white">
-                  <FaUser />
+                  type="text"
+                  name="adhar"
+                  value={formData.adhar}
+                  onChange={handleChange}
+                  className="form-control mb-3"
+                  placeholder="ஆதார் எண் *"
+                  required
+                />
+              </div>
+
+              {/* Address */}
+              <div className="input-group ">
+                <span className="input-group-text mb-3 bg-danger text-white">
+                  <i className="bi bi-building-fill"></i>
                 </span>
-              <input
-                type="text"
-                name="motherName"
-                value={formData.motherName}
-                onChange={handleChange}
-                className="form-control mb-3"
-                placeholder="தாய் பெயர் *"
-                required
-              />
-                </div>
-                <div className="input-group ">
-                    <span className="input-group-text mb-3 bg-danger text-white">
-                      <i class="bi bi-award-fill"></i>
-                    </span>
-              <input
-                type="text"
-                name="occupation"
-                value={formData.occupation}
-                onChange={handleChange}
-                className="form-control mb-3"
-                placeholder="தொழில் *"
-                required
-              />
-                </div>
-                <div className="input-group ">
-                    <span className="input-group-text mb-3 bg-danger text-white">
-                      <FaPhone />
-                    </span>
+                <textarea
+                  name="address"
+                  value={formData.address}
+                  onChange={handleChange}
+                  className="form-control mb-3"
+                  placeholder="முகவரி *"
+                  required
+                ></textarea>
+              </div>
 
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                className="form-control mb-3"
-                placeholder="தொலைபேசி எண் *"
-                required
-              />
-                </div>
-                <div className="input-group ">
-                    <span className="input-group-text mb-3 bg-danger text-white">
-                      <FaPhone />
-                    </span>
-              <input
-                type="tel"
-                name="emergencyPhone"
-                value={formData.emergencyPhone}
-                onChange={handleChange}
-                className="form-control mb-3"
-                placeholder="அவசர தொலைபேசி எண் *"
-                required
-              />
-                </div>
-                <div className="input-group ">
-                    <span className="input-group-text mb-3 bg-danger text-white">
-                      <FaUser />
-                    </span>
-
-              <input
-                type="text"
-                name="adhar"
-                value={formData.adhar}
-                onChange={handleChange}
-                className="form-control mb-3"
-                placeholder="ஆதார் எண் *"
-                required
-              />
-                </div>
-                <div className="input-group ">
-                  <span className="input-group-text mb-3 bg-danger text-white">
-                    <i class="bi bi-building-fill"></i>
-                  </span>
-
-              <textarea
-                name="address"
-                value={formData.address}
-                onChange={handleChange}
-                className="form-control mb-3"
-                placeholder="முகவரி *"
-                required
-              ></textarea>
-                </div>
-
-              <div className="form-check mb-3">
+              {/* Consent */}
+              <div className="form-check  mb-3">
                 <input
                   type="checkbox"
                   name="consent"
@@ -428,11 +440,12 @@ const Join = () => {
                   className="form-check-input"
                   required
                 />
-                <label className="form-check-label">
-                  அகிலம் நண்பர்கள் அறக்கட்டளையுடன் இணைய நான் கொடுத்த தகவல்கள் உண்மை மற்றும் சரியானவை என்பதை உறுதி செய்கிறேன்
+                <label className="form-check-label ms-0">
+                  நான் கொடுத்த தகவல்கள் உண்மை மற்றும் சரியானவை என்பதை உறுதி செய்கிறேன்
                 </label>
               </div>
 
+              {/* Buttons */}
               <div className="d-flex justify-content-between">
                 <button
                   className="btn btn-secondary"
@@ -449,6 +462,70 @@ const Join = () => {
           )}
         </div>
       </div>
+
+      {/* ✅ Custom Welcome Modal */}
+      {showWelcome && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0,0,0,0.5)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 9999,
+          }}
+        >
+          <div
+            style={{
+              backgroundColor: "#fff",
+              padding: "25px",
+              borderRadius: "12px",
+              textAlign: "center",
+              width: "90%",
+              maxWidth: "420px",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+            }}
+          >
+            <p className="fw-bold h6 text-dark mb-4" style={{ lineHeight: 1.6 }}>
+              👋 உங்களை அகிலம் நண்பர்கள்  அறக்கட்டளைக்கு வரவேற்பதில் மிக்க மகிழ்ச்சி 🎉,
+              இனிவரும் காலங்களில்  இந்த மண்ணையும் மக்களையும்  காக்க  நாம்  இணைந்து செயல்படுவோம்!
+            </p>
+            <button
+              className="btn btn-success border-   fw-bold"
+              onClick={() => {
+                setShowWelcome(false);
+                alert("உங்களை அகிலம் நண்பர்கள் அறக்கட்டளைக்கு வரவேற்பதில் மிக்க மகிழ்ச்சி 🎉 …")
+                navigate("/");
+                setFormData({
+                  country: "",
+                  state: "",
+                  district: "",
+                  constituency: "",
+                  name: "",
+                  age: "",
+                  gender: "",
+                  dateofbirth:"",
+                  fatherName: "",
+                  motherName: "",
+                  occupation: "",
+                  phone: "",
+                  emergencyPhone: "",
+                  adhar: "",
+                  address: "",
+                  consent: false,
+                });
+                setStep(2);
+              }}
+            >
+             ✅ உறுதிப்படுத்த
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

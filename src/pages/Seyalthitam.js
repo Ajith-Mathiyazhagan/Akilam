@@ -1,4 +1,4 @@
-import React from "react";
+import {useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import {
   FaHandHoldingHeart,
@@ -16,21 +16,23 @@ import {
 
 const Seyalthitam = () => {
   const navigate = useNavigate();
-
+useEffect(() => {
+          window.scrollTo({ top: 0 });
+        }, []);
   const projectList = [
     // 🩸 Blood Donation (Bootstrap Icon)
     { icon: <i className="bi bi-droplet-fill me-2"></i>, title: "இலவச குருதிக்கொடை திட்டம்", color: "danger", path: "/blood" },
 
    
-    { icon: <FaHandHoldingHeart />, title: "ஆதரவற்றோர் (ம) முதியோர் மீட்பு திட்டம்", color: "primary", path: "/elderly-care" },
-    { icon: <FaBookOpen />, title: "ஏழை எளிய மாணவ மாணவியரின் இலவச கல்வி உதவி திட்டம்", color: "success", path: "/education-help" },
-    { icon: <FaTools />, title: "இலவச சுயதொழில் (ம) வேலைவாய்ப்பு பயிற்சி  திட்டம்", color: "warning", path: "/employment-support" },
-    { icon: <FaLeaf />, title: "இயற்கை விவசாய திட்டம்", color: "success", path: "/organic-farming" },
-    { icon: <FaWater />, title: "இயற்கை நீர் நிலைகள் பாதுகாப்பு திட்டம்", color: "info", path: "/water-conservation" },
-    { icon: <FaSchool />, title: "இலவச இரவு பாட சாலை திட்டம்", color: "secondary", path: "/night-school" },
-    { icon: <FaUserTie />, title: "அரசு வேலைவாய்ப்பு பயிற்சி திட்டம்", color: "primary", path: "/govt-training" },
-    { icon: <FaHandsHelping />, title: "இயற்கை பேரிடர் மீட்பு பணிகள் திட்டம்", color: "danger", path: "/disaster-relief" },
-    { icon: <FaLightbulb />, title: "கல்வி, தொழில் (ம) சமூக விழிப்புணர்வு திட்டம்", color: "warning", path: "/awareness" },
+    { icon: <FaHandHoldingHeart />, title: "ஆதரவற்றோர் (ம) முதியோர் மீட்பு திட்டம்", color: "primary", path: "/Whatsapp" },
+    { icon: <FaBookOpen />, title: "ஏழை எளிய மாணவ மாணவியரின் இலவச கல்வி உதவி திட்டம்", color: "success", path: "/Whatsapp" },
+    { icon: <FaTools />, title: "இலவச சுயதொழில் (ம) வேலைவாய்ப்பு பயிற்சி  திட்டம்", color: "warning", path: "/Whatsapp" },
+    { icon: <FaLeaf />, title: "இயற்கை விவசாய திட்டம்", color: "success", path: "/Whatsapp" },
+    { icon: <FaWater />, title: "இயற்கை நீர் நிலைகள் பாதுகாப்பு திட்டம்", color: "info", path: "/Whatsapp" },
+    { icon: <FaSchool />, title: "இலவச இரவு பாட சாலை திட்டம்", color: "secondary", path: "/Whatsapp" },
+    { icon: <FaUserTie />, title: "அரசு வேலைவாய்ப்பு பயிற்சி திட்டம்", color: "primary", path: "/Whatsapp" },
+    { icon: <FaHandsHelping />, title: "இயற்கை பேரிடர் மீட்பு பணிகள் திட்டம்", color: "danger", path: "/Whatsapp" },
+    { icon: <FaLightbulb />, title: "கல்வி, தொழில் (ம) சமூக விழிப்புணர்வு திட்டம்", color: "warning", path: "/Whatsapp" },
   ];
 
   const handleClick = (path) => {
@@ -40,27 +42,29 @@ const Seyalthitam = () => {
   return (
     <div className="container">
       <div className="row text-center mt-3">
-        <div className="col-8">
-          <p className="h4 fw-bold mb-0 text-start  ms-2">செயல்திட்டம் :</p>
+        <div className="col-12">
+          <p className="h4 fw-bold mb-0 text-start  ms-2">செயல்திட்டங்கள் :</p>
         </div>
       </div>
 
       <div className="p-1">
-        {projectList.map((item, index) => (
-          <button
-            key={index}
-            className={`btn btn-${item.color} p-2 m-1 w-100 gap-2 shadow-sm fw-bold text-white tamil-btn`}
-            onClick={() => handleClick(item.path)}
-          >
-            <p className="m-1 h6 text-start">
-              {item.icon} {item.title}
-            </p>
-          </button>
-        ))}
-      </div>
+  {projectList.map((item, index) => (
+    <button
+      key={index}
+      className={`btn btn-${item.color} p-2 m-1 w-100 d-flex align-items-center gap-2 shadow-sm fw-bold text-white tamil-btn`}
+      onClick={() => handleClick(item.path)}
+    >
+      {/* Icon on the left */}
+      <span className="fs-5">{item.icon}</span>
+      {/* Text on the right */}
+      <span className="text-start flex-grow-1 ">{item.title}</span>
+    </button>
+  ))}
+</div>
+
 
       <p className="text-center m-2 h6 fw-bold p-1 text-success">
-        நீ பிறந்த பலனை அடைய வேண்டும் என்றால் பிறருக்கு உதவி செய் .
+        நீ பிறந்த பலனை அடைய வேண்டும் என்றால் பிறருக்கு உதவி செய் 
       </p>
 
       {/* “Join with us” button */}
@@ -71,7 +75,8 @@ const Seyalthitam = () => {
         <FaHandshake className="fs-5 " />
         உறவாய் இணைய
       </button>
-      
+      <p className="text-primary fw-bold mb-2">அர்ப்பணிப்பு இல்லாமல் <br></br>உங்கள் வாழ்க்கை அர்த்தமாகாது</p>
+      {/* <p className="fw-bold text-end">- தே.அரி அகிலன் </p> */}
     </div>
   );
 };

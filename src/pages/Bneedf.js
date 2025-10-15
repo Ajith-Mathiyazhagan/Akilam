@@ -16,6 +16,12 @@ import { useNavigate } from "react-router-dom";
 import tamilnaduData from "../data/tamilnaduData.json";
 
 const Bneedf = () => {
+  useEffect(() => {
+  setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 100); // 100ms delay
+}, []);
+
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
 
@@ -155,20 +161,20 @@ const Bneedf = () => {
              </div>
            </div>
 
-      <div className=" text-center bg-white mt-2">
+      <div className=" text-center bg-white ">
        
 
-      <h4 className="text-center text-danger fw-bold mt-2">
+      <h4 className="text-center text-danger fw-bold mt-0">
         அகிலம் நண்பர்கள் அறக்கட்டளை 
       </h4>
       <h6 className="text-center fw-light mb-3">
-        உறவாய் இணைவோம், உதிரம் கொடுத்து பல உயிர்களை காப்போம்!
+        உறவாய் இணைவோம் உதிரம் கொடுத்து பல உயிர்களை காப்போம்!
       </h6>
       <h5 className="text-center text-danger fw-bold mt-2">
         குருதித்தேவைக்காண பதிவு
       </h5>
 
-      <div className="border p-4 rounded shadow bg-light">
+      <div className="border p-4 rounded shadow bg-light mb-3">
         {/* Step 1: Blood Group */}
         {step === 1 && (
           <div className="text-center">

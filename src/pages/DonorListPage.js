@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../firebase";
 import { collection, onSnapshot } from "firebase/firestore";
-import { FaTint,  } from "react-icons/fa";
+import { FaTint } from "react-icons/fa";
 import tamilnaduData from "../data/tamilnaduData.json";
 import logo from "../assets/logoakilam.png";
 import mt from "../assets/mm.jpg";
 import na from "../assets/na.jpg";
 
 const DonorListPage = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100); // 100ms delay
+  }, []);
+
   const [donors, setDonors] = useState([]);
   const [selectedDonor, setSelectedDonor] = useState(null);
 
@@ -61,49 +67,45 @@ const DonorListPage = () => {
   return (
     <div className="container my-3">
       <div className="container text-center ">
-<div className=" row text-center">
-             <div className=" col-3 col-md-3 col-lg-2">
-               <p className="fw-bold mx-auto text-center mb-0">உறவாய் இணைவோம்!</p>
-               <img
-                 src={na}
-                 alt="Anna"
-                 className="img-fluid br w-75 h-50  border-success rounded-circle"
-               />
-             </div>
-     
-             <div className="col-1 col-md-1 col-lg-2"></div>
-     
-             <div className="col-4 col-md-4 col-lg-4">
-               <p className="fw-bold h2 mx-auto text-center mb-0 ">அ</p>
-               <img
-                 src={logo}
-                 alt="Logo"
-                 className="img-fluid logo-img mb-0"
-               />
-             </div>
-     
-             <div className="col-1 col-md-1 col-lg-2"></div>
-     
-             <div className="col-3 col-md-3 mb-6 col-lg-2 mx-auto">
-               <p className="fw-bold mx-auto text-center mb-0">உலகை காப்போம்!</p>
-               <img
-                 src={mt}
-                 alt="Anna"
-                 className="img-fluid br w-75 h-50  border-success rounded-circle"
-               />
-             </div>
-           </div>
+        <div className=" row text-center">
+          <div className=" col-3 col-md-3 col-lg-2">
+            <p className="fw-bold mx-auto text-center mb-0">உறவாய் இணைவோம்!</p>
+            <img
+              src={na}
+              alt="Anna"
+              className="img-fluid br w-75 h-50  border-success rounded-circle"
+            />
+          </div>
+
+          <div className="col-1 col-md-1 col-lg-2"></div>
+
+          <div className="col-4 col-md-4 col-lg-4">
+            <p className="fw-bold h2 mx-auto text-center mb-0 ">அ</p>
+            <img src={logo} alt="Logo" className="img-fluid logo-img mb-0" />
+          </div>
+
+          <div className="col-1 col-md-1 col-lg-2"></div>
+
+          <div className="col-3 col-md-3 mb-6 col-lg-2 mx-auto">
+            <p className="fw-bold mx-auto text-center mb-0">உலகை காப்போம்!</p>
+            <img
+              src={mt}
+              alt="Anna"
+              className="img-fluid br w-75 h-50  border-success rounded-circle"
+            />
+          </div>
+        </div>
         <h4 className="text-center text-danger fw-bold ">
-       அகிலம் நண்பர்கள் அறக்கட்டளை
-     </h4>
-      <h6 className="text-center fw-light">
-        உறவாய் இணைவோம் உதிரம் கொடுத்து பல உயிர்களை காப்போம் !{" "}
-      </h6>
-      <h4 className="text-center text-danger mb-2 fw-bold ">
-      இரத்த தானம் செய்வோரை அறிய
-     </h4>
+          அகிலம் நண்பர்கள் அறக்கட்டளை
+        </h4>
+        <h6 className="text-center fw-light">
+          உறவாய் இணைவோம் உதிரம் கொடுத்து பல உயிர்களை காப்போம்!{" "}
+        </h6>
+        <h4 className="text-center text-danger mb-2 fw-bold ">
+          இரத்த தானம் செய்வோரை அறிய
+        </h4>
       </div>
-     
+
       {/* Filters */}
       {!selectedDonor && (
         <div className="row mb-4">
@@ -116,7 +118,9 @@ const DonorListPage = () => {
             >
               <option value="">இரத்த வகை</option>
               {["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"].map((bg) => (
-                <option key={bg} value={bg}>{bg}</option>
+                <option key={bg} value={bg}>
+                  {bg}
+                </option>
               ))}
             </select>
           </div>
@@ -130,7 +134,9 @@ const DonorListPage = () => {
             >
               <option value="">நாடு</option>
               {Object.keys(tamilnaduData).map((c) => (
-                <option key={c} value={c}>{c}</option>
+                <option key={c} value={c}>
+                  {c}
+                </option>
               ))}
             </select>
           </div>
@@ -146,7 +152,9 @@ const DonorListPage = () => {
               <option value="">மாநிலம்</option>
               {filters.country &&
                 Object.keys(tamilnaduData[filters.country]).map((s) => (
-                  <option key={s} value={s}>{s}</option>
+                  <option key={s} value={s}>
+                    {s}
+                  </option>
                 ))}
             </select>
           </div>
@@ -161,9 +169,13 @@ const DonorListPage = () => {
             >
               <option value="">மாவட்டம்</option>
               {filters.state &&
-                Object.keys(tamilnaduData[filters.country][filters.state]).map((d) => (
-                  <option key={d} value={d}>{d}</option>
-                ))}
+                Object.keys(tamilnaduData[filters.country][filters.state]).map(
+                  (d) => (
+                    <option key={d} value={d}>
+                      {d}
+                    </option>
+                  )
+                )}
             </select>
           </div>
 
@@ -177,8 +189,12 @@ const DonorListPage = () => {
             >
               <option value="">தொகுதி</option>
               {filters.district &&
-                tamilnaduData[filters.country][filters.state][filters.district].map((t) => (
-                  <option key={t} value={t}>{t}</option>
+                tamilnaduData[filters.country][filters.state][
+                  filters.district
+                ].map((t) => (
+                  <option key={t} value={t}>
+                    {t}
+                  </option>
                 ))}
             </select>
           </div>
@@ -199,10 +215,24 @@ const DonorListPage = () => {
                   <div className="d-flex align-items-center gap-3">
                     <FaTint className="fs-1 text-danger" />
                     <div>
-                      <h5 className="mb-1">{donor.name} ({donor.age} வயது)</h5>
-                      <p className="mb-1">இரத்த வகை:<span className="fw-bold text-danger ms-1">{donor.bloodGroup}</span></p>
-                      <p className="mb-1">தொலைபேசி:<span className="fw-bold text-danger ms-1">{donor.phone}</span> </p>
-                      <p className="mb-1">{donor.district}, {donor.constituency}</p>
+                      <h5 className="mb-1">
+                        {donor.name} ({donor.age} வயது)
+                      </h5>
+                      <p className="mb-1">
+                        இரத்த வகை:
+                        <span className="fw-bold text-danger ms-1">
+                          {donor.bloodGroup}
+                        </span>
+                      </p>
+                      <p className="mb-1">
+                        தொலைபேசி:
+                        <span className="fw-bold text-danger ms-1">
+                          {donor.phone}
+                        </span>{" "}
+                      </p>
+                      <p className="mb-1">
+                        {donor.district}, {donor.constituency}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -217,21 +247,47 @@ const DonorListPage = () => {
       {/* Selected Donor Details */}
       {selectedDonor && (
         <div className="card p-4 shadow-sm border border-danger">
-         
-
-          <h5 className="text-danger fw-bold mb-3">{selectedDonor.name} ({selectedDonor.age} வயது)</h5>
-          <p><strong>இரத்த வகை:</strong><span className="fw-bold text-danger ms-1">{selectedDonor.bloodGroup}</span></p>
-          <p><strong>தந்தை பெயர்:</strong> {selectedDonor.fatherName}</p>
-          <p><strong>தாய் பெயர்:</strong> {selectedDonor.motherName}</p>
-          <p><strong>தொலைபேசி:</strong><span className="fw-bold text-danger ms-1">{selectedDonor.phone}</span></p>
-          <p><strong>முகவரி:</strong> {selectedDonor.address}</p>
-          {selectedDonor.aadhaar && <p><strong>ஆதார்:</strong> {selectedDonor.aadhaar}</p>}
-          {selectedDonor.constituency && <p><strong>தொகுதி:</strong> {selectedDonor.constituency}</p>}
-          {selectedDonor.createdAt && (
-            <p><strong>சமர்ப்பிக்கப்பட்ட தேதி:</strong> {selectedDonor.createdAt.toDate().toLocaleString("ta-IN")}</p>
-            
+          <h5 className="text-danger fw-bold mb-3">
+            {selectedDonor.name} ({selectedDonor.age} வயது)
+          </h5>
+          <p>
+            <strong>இரத்த வகை:</strong>
+            <span className="fw-bold text-danger ms-1">
+              {selectedDonor.bloodGroup}
+            </span>
+          </p>
+          <p>
+            <strong>தந்தை பெயர்:</strong> {selectedDonor.fatherName}
+          </p>
+          <p>
+            <strong>தாய் பெயர்:</strong> {selectedDonor.motherName}
+          </p>
+          <p>
+            <strong>தொலைபேசி:</strong>
+            <span className="fw-bold text-danger ms-1">
+              {selectedDonor.phone}
+            </span>
+          </p>
+          <p>
+            <strong>முகவரி:</strong> {selectedDonor.address}
+          </p>
+          {selectedDonor.aadhaar && (
+            <p>
+              <strong>ஆதார்:</strong> {selectedDonor.aadhaar}
+            </p>
           )}
-           <button
+          {selectedDonor.constituency && (
+            <p>
+              <strong>தொகுதி:</strong> {selectedDonor.constituency}
+            </p>
+          )}
+          {selectedDonor.createdAt && (
+            <p>
+              <strong>சமர்ப்பிக்கப்பட்ட தேதி:</strong>{" "}
+              {selectedDonor.createdAt.toDate().toLocaleString("ta-IN")}
+            </p>
+          )}
+          <button
             className="btn btn-secondary mb-1"
             onClick={() => setSelectedDonor(null)}
           >

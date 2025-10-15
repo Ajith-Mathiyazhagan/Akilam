@@ -1,24 +1,41 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../firebase";
-import { collection, onSnapshot, addDoc, serverTimestamp } from "firebase/firestore";
+import { collection, onSnapshot } from "firebase/firestore";
 import { FaTint, FaUsers, FaRegCalendarAlt } from "react-icons/fa";
 
 const CountBox = ({ title, count, icon, description, color }) => (
-  <div className="col-12 col-md-4 mb-3">
+ 
+  <div className="col-12 col-md-12 col-lg-4 mb-2">
+  <div
+    className="card text-center shadow-sm rounded"
+    style={{
+      height: "169px",
+      border: "1px solid #dc3545",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      padding: "0px", // reduce inside space
+    }}
+  >
     <div
-      className="card text-center shadow-sm rounded"
-      style={{ minHeight: "100px", border: "1px solid #dc3545" }}
+      className="card-body d-flex flex-column justify-content-center align-items-center "
+      style={{ paddingTop: "5px", paddingBottom: "5px" }}
     >
-      <div className="card-body d-flex flex-column justify-content-center align-items-center ">
-        <div className="fs-1">{icon}</div>
-        <h2 className="fw-bold " style={{ color: color }}>{count}+</h2>
-        <h5 className="fw-bold" style={{ color: color }}>{title}</h5>
-        {description && (
-          <p className="text-muted mb-0">{description}</p>
-        )}
-      </div>
+      <div className="fs-2 mb-1 ">{icon}</div>
+      <h2 className="fw-bold mb-1" style={{ color: color }}>
+        {count}+
+      </h2>
+      <h6 className="fw-bold mb-1" style={{ color: color }}>
+        {title}
+      </h6>
+      {description && (
+        <p className="text-muted mb-0 small">{description}</p>
+      )}
     </div>
   </div>
+</div>
+
+
 );
 
 const Count = () => {
@@ -26,41 +43,34 @@ const Count = () => {
   const [teamCount, setTeamCount] = useState(0);
 
   useEffect(() => {
-    const colRef = collection(db, "donors");
-    const unsubscribe = onSnapshot(colRef, (snapshot) => {
-      setTotalDonors(snapshot.size);
+    // 🔹 1. Total Donors Count (real-time)
+    const donorsRef = collection(db, "donors");
+    const unsubscribeDonors = onSnapshot(donorsRef, (snapshot) => {
+      setTotalDonors(snapshot.size); // total number of donor documents
     });
 
-    // Example: fetch team count from Firestore or set manually
-    const fetchTeamCount = async () => {
-      try {
-        const count = 12; // replace with actual logic or Firestore fetch
-        setTeamCount(count);
+    // 🔹 2. Team Members Count (real-time)
+    const teamRef = collection(db, "newRegisters");
+    const unsubscribeTeam = onSnapshot(teamRef, (snapshot) => {
+      setTeamCount(snapshot.size); // total number of documents in newRegisters
+    });
 
-        // Save teamCount to Firestore
-        await addDoc(collection(db, "newRegisters"), {
-          teamCount: count,
-          createdAt: serverTimestamp(),
-        });
-      } catch (error) {
-        console.error("Error adding document: ", error);
-      }
+    // Cleanup
+    return () => {
+      unsubscribeDonors();
+      unsubscribeTeam();
     };
-
-    fetchTeamCount();
-
-    return () => unsubscribe();
   }, []);
 
   return (
     <div className="container ">
-      <p className="h4 fw-bold">எங்களுடைய பங்களிப்புகள்</p>
-      <div className="row ">
+      <p className="h6 fw-bold  ">எங்களுடைய பங்களிப்புகள்</p>
+      <div className="row">
         <CountBox 
-          title="மொத்த ரத்த தானியாளர்கள்"
+          title="மொத்த குருதிக்கொடையாளர்கள்"
           count={totalDonors}
           icon={<FaTint className="text-danger" />}
-          description={`15+ ஆண்டுகளாக சேவை செய்துகொண்டுவருகிறோம்`}
+          description="15+ ஆண்டுகளாக சேவை செய்துகொண்டுவருகிறோம்"
           color="#dc3545"
         />
         <CountBox
@@ -72,9 +82,9 @@ const Count = () => {
         />
         <CountBox
           title="அடுத்த ஆண்டு குறிக்கோள்"
-          count={200}
+          count={2000}
           icon={<FaRegCalendarAlt className="text-success" />}
-          description="200+ புதிய உயிர்களை காப்போம் அடுத்த ஆண்டு"
+          description="2000+ புதிய உயிர்களை காப்போம் அடுத்த ஆண்டு"
           color="#28a745"
         />
       </div>

@@ -2,6 +2,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import aaa from '../assets/ak.png'; // Adjust the path as necessary
+/* import logo from '../assets/logoakilam.png';  */
 
 const Header = () => {
   const navigate = useNavigate();
@@ -38,15 +39,21 @@ const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg color fixed-top  shadow ">
       <div className="container-fluid">
+       {/*  <img
+          src={logo}
+          alt="Logo"
+          style={{ height: "60px", width: "60px", cursor: "pointer" }}
+          className="ms-2"
+        /> */}
         <img
           src={aaa}
           alt="Logo"
           style={{ height: "50px", width: "150px", cursor: "pointer" }}
-          className="ms-2"
+          className=""
         />
 
         <button
-          className="navbar-toggler mx-3 text-light"
+          className="navbar-toggler mx-1 text-light"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -57,7 +64,7 @@ const Header = () => {
           <span className="navbar-toggler-icon text-light"></span>
         </button>
 
-        <div className="collapse navbar-collapse text-light mx-3" id="navbarNav">
+        <div className="collapse navbar-collapse text-light mx-1" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <button className="nav-link btn text-start text-light" onClick={() => handleNavClick("/")}>
@@ -65,18 +72,18 @@ const Header = () => {
               </button>
             </li>
             <li className="nav-item">
-              <button className="nav-link btn text-start text-light" onClick={() => handleNavClick("/FounderDetails")}>
+              <button className="nav-link btn text-start text-light" onClick={() => handleNavClick("/Founder")}>
                 <i className="bi bi-person-badge-fill me-2 text-danger"></i> நிறுவனர்
               </button>
             </li>
             <li className="nav-item">
-              <button className="nav-link btn text-start text-light" onClick={() => handleNavClick("/NewRegisters")}>
-                <i className="bi bi-hand-thumbs-up-fill me-2 text-danger"></i> உறுப்பினர்கள் 
+              <button className="nav-link btn text-start text-light" onClick={() => handleNavClick("/Login")}>
+                <i className="bi bi-person-lock me-2 text-danger"></i> உள்நுழைக
               </button>
             </li>
             <li className="nav-item">
-              <button className="nav-link btn text-start text-light" onClick={() => handleNavClick("/Whatsapp")}>
-                <i className="bi bi-chat-dots-fill me-2 text-danger"></i> உதவி பெற
+              <button className="nav-link btn text-start text-light" onClick={() => handleNavClick("/Join")}>
+                <i className="bi bi-chat-dots-fill me-2 text-danger"></i> உறவாய் இனைய
               </button>
             </li>
           </ul>

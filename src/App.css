@@ -125,12 +125,24 @@ p {
   letter-spacing: 1px;
   text-transform: uppercase;
   background: linear-gradient(90deg, #0047ab, #007bff);
+  -webkit-background-clip: text;
+  background-clip: text;
+   background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+.fmain-tamil-title {
+  font-family: "Baloo Thambi 2", "Noto Sans Tamil", sans-serif;
+  font-size: clamp(20px, 5vw, 10px);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #0047ab, #007bff);
    -webkit-background-clip: text;
    background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
 }
-
 /*  Sub Tamil Title */
 .sub-tamil-title {
   font-family: "Noto Sans Tamil", "Baloo Thambi 2", sans-serif;
@@ -156,3 +168,55 @@ p {
   transform: translateY(0);
   box-shadow: none;
 } */
+.mmt{
+  margin-top: -20px;
+}
+
+@media (max-width: 768px) {
+  p {
+    text-align: left !important;
+  }
+}
+.mainl-tamil-title {
+  font-family: "Baloo Thambi 2", "Noto Sans Tamil", sans-serif;
+  font-size: clamp(15px, 5vw, 10px);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 23px;
+  background: linear-gradient(90deg, #ab0000, #ffcc00f5);
+   -webkit-background-clip: text;
+   background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+.ajnex {
+  font-weight: bold;
+  
+  background: linear-gradient(
+    90deg,
+    #ff0000,
+    #ff7300,
+    #ffeb00,
+    #47ff00,
+    #00ffee,
+    #2b65ff,
+    #ff00ff,
+    #ff0000
+  );
+  background-size: 400%;
+  background-clip: text;           /* Standard */
+  -webkit-background-clip: text;   /* WebKit support */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: colorRun 6s linear infinite;
+}
+
+@keyframes colorRun {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 400% 50%;
+  }
+}

@@ -17,6 +17,14 @@ import Img from "./pages/Img";
 import Count from "./pages/Count";
 import Join from "./pages/Join";
 import NewRegistersPage from "./pages/NewRegistersPage";
+import Whatsapp from "./pages/Whatsapp";
+import About from "./pages/About";
+import Founder from "./pages/Founder";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashbord";
+import Lregister from "./pages/Lregister";
+import ProtectedRoute from "./components/ProtectedRoute";
+import UserList from "./pages/UserList";
 
 function App() {
   return (
@@ -36,10 +44,37 @@ function App() {
         <Route path="/Img" element={<Img />}></Route>
         <Route path="/Count" element={<Count />}></Route>
         <Route path="/Join" element={<Join />}></Route>
-        <Route path="/NewRegisters" element={<NewRegistersPage />}></Route>
-        
+        <Route
+          path="/NewRegistersPage"
+          element={
+            <ProtectedRoute>
+              <NewRegistersPage />
+            </ProtectedRoute>
+          }
+        />{" "}
+        <Route
+          path="/Lregister"
+          element={
+            <ProtectedRoute>
+              <Lregister />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/Userlist"
+          element={
+            <ProtectedRoute>
+              <UserList />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="/Whatsapp" element={<Whatsapp />}></Route>
+        <Route path="/About" element={<About />}></Route>
+        <Route path="/Founder" element={<Founder />}></Route>
+        <Route path="/Login" element={<Login />}></Route>
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
-      <Img />
+
       <Footer />
     </div>
   );
