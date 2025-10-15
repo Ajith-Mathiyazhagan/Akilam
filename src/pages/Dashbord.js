@@ -5,7 +5,7 @@ import mt from "../assets/mm.jpg";
 import na from "../assets/na.jpg";
 import { useNavigate } from "react-router-dom";
 
-const Dashboard = () => {
+const Dashbord = () => {
   useEffect(() => {
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -181,4 +181,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Dashbord;

@@ -20,7 +20,7 @@ const Lregister = () => {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       await updateProfile(userCredential.user, { displayName: username });
 
-      // ✅ Store in Firestore
+       
       await setDoc(doc(db, "users", userCredential.user.uid), {
         username,
         uid: userCredential.user.uid,
