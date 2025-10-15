@@ -72,7 +72,7 @@ function App() {
         <Route path="/About" element={<About />}></Route>
         <Route path="/Founder" element={<Founder />}></Route>
         <Route path="/Login" element={<Login />}></Route>
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/Dashbord" element={<Dashboard />} />
       </Routes>
 
       <Footer />

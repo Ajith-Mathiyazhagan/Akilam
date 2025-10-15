@@ -17,7 +17,7 @@ const Login = () => {
       const email = `${username}@example.com`;
       await signInWithEmailAndPassword(auth, email, password);
       alert("உள்நுழைவு வெற்றி!");
-      window.location.href = "/dashboard";
+      window.location.href = "/Dashbord";
     } catch (error) {
       alert("பயனர் பெயர் அல்லது கடவுச்சொல் தவறு!");
     }

@@ -109,7 +109,7 @@ const DonorListPage = () => {
       {/* Filters */}
       {!selectedDonor && (
         <div className="row mb-4">
-          <div className="col-md-2 mb-2">
+          <div className="col-md-2 mb-2 mx-start text-center">
             <select
               className="form-select"
               name="bloodGroup"
@@ -179,7 +179,7 @@ const DonorListPage = () => {
             </select>
           </div>
 
-          <div className="col-md-2 mb-2">
+          <div className="col-md-4 mb-2">
             <select
               className="form-select"
               name="constituency"

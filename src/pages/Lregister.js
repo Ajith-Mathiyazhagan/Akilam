@@ -28,7 +28,7 @@ const Lregister = () => {
       });
 
       alert("பதிவு வெற்றி! உள்நுழைவு செய்யப்படுகிறது...");
-      window.location.href = "/dashboard";
+      window.location.href = "/Dashbord";
     } catch (error) {
       alert(error.message);
     }
