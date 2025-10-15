@@ -67,7 +67,7 @@ const Dashbord = () => {
           <div className="col-1 col-md-1 col-lg-2"></div>
 
           <div className="col-3 col-md-3 mb-6 col-lg-2 mx-auto">
-            <p className="fw-bold mx-auto text-center mb-0">உலகை காப்போம்!</p>
+            <p className="fw-bold mx-auto text-center mb-0">உலகையே காப்போம்!</p>
             <img
               src={mt}
               alt="Anna"
@@ -79,7 +79,7 @@ const Dashbord = () => {
           அகிலம் நண்பர்கள் அறக்கட்டளை
         </h2>
         <h4 className="sub-tamil-title text-center">தமிழ்நாடு</h4>
-        <h4 className="text-primary mt-3">
+        <h4 className="text-primary mt-2">
           {" "}
           <span className="fs-6 text-dark"> வணக்கம்</span> {username}
           <span className="fs-6 text-dark"> உங்களை வரவேற்கிறோம்! </span>{" "}
@@ -93,7 +93,7 @@ const Dashbord = () => {
               </div>
               <div className="card-body">
                 <p className="text-center fw-bold">
-                  உறவாய் இணைவோம்! உலகை காப்போம்!
+                  உறவாய் இணைவோம்! உலகையே காப்போம்!
                 </p>
                 <button
                   onClick={() => nav("/NewRegistersPage")}
@@ -143,7 +143,7 @@ const Dashbord = () => {
                   onClick={() => nav("/Lregister")}
                   className="btn btn-success d-flex align-items-center mx-auto text-center"
                 >
-                  <i className="bi bi-person-fill me-2"></i> {/* Left icon */}
+                  <i className="bi bi-person-fill-lock me-2"></i> {/* Left icon */}
                   உறுப்பினர்கள் பதிவு
                 </button>
               </div>
@@ -163,7 +163,7 @@ const Dashbord = () => {
                   onClick={() => nav("/Userlist")}
                   className="btn btn-warning text-white d-flex align-items-center mx-auto text-center"
                 >
-                  <i className="bi bi-person-fill me-2"></i> {/* Left icon */}
+                  <i className="bi bi-person-vcard-fill me-2"></i> {/* Left icon */}
                   உறுப்பினர்கள் தகவல்
                 </button>
               </div>
@@ -172,7 +172,7 @@ const Dashbord = () => {
           <button
             className="btn btn-danger w-50 mx-auto mb-3"
             onClick={handleLogout}
-          >
+          ><i class="bi bi-person-fill-x me-1"></i>
             வெளியேறு
           </button>
         </div>

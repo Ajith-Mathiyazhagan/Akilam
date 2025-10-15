@@ -29,7 +29,7 @@ const Bd = () => {
           <div className="col-1 col-md-1 col-lg-2"></div>
 
           <div className="col-3 col-md-3 mb-6 col-lg-2 mx-auto">
-            <p className="fw-bold mx-auto text-center mb-0">உலகை காப்போம்!</p>
+            <p className="fw-bold mx-auto text-center mb-0">உலகையே காப்போம்!</p>
             <img
               src={mt}
               alt="Anna"

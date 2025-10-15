@@ -15,8 +15,7 @@ const Footer = () => {
           <div className="col-md-4 col-lg-4 col-xl-4 mx-auto ">
             <h5 className=" mb-2 font-weight-bold"><b>அகிலம் நண்பர்கள் அறக்கட்டளை</b></h5>
             <p className="mx-auto text-center">
-              எங்கள் அறக்கட்டளை இரத்த தான முகாம்கள், கல்வி முயற்சிகள் மற்றும் சமூக சேவை திட்டங்கள் மூலம்
-              சமூக நலனில் பணியாற்றுவதற்கு அர்ப்பணிக்கப்பட்டது.
+             அன்றும் இன்றும் என்றும் இந்த மண்ணிற்காகவும், மக்களுக்காகவும் தொடர்ந்து சமூக பணியில் ஈடுபட்டு வருகிறது.
             </p>
             
           </div>
@@ -66,7 +65,7 @@ const Footer = () => {
         </div>
           <div className="col-md-5 col-lg-4 mt-2 mx-auto text-center">
   <div className="d-flex justify-content-center gap-3">
-    <a href="http://facebook.com/hari.akilan.73" className="text-primary"><i className="bi bi-facebook"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=100054293239611" className="text-primary"><i className="bi bi-facebook"></i></a>
     <a href="https://www.instagram.com/akilamnanbarkal" className="text-danger"><i className="bi bi-instagram"></i></a>
     <a href="https://www.youtube.com/@%E0%AE%85%E0%AE%95%E0%AE%BF%E0%AE%B2%E0%AE%AE%E0%AF%8D%E0%AE%A8%E0%AE%A3%E0%AF%8D%E0%AE%AA%E0%AE%B0%E0%AF%8D%E0%AE%95%E0%AE%B3%E0%AF%8D%E0%AE%85%E0%AE%B1%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AE%9F%E0%AF%8D%E0%AE%9F%E0%AE%B3%E0%AF%88" className="text-danger"><i className="bi bi-youtube"></i></a>
     

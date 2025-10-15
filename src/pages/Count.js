@@ -29,7 +29,7 @@ const CountBox = ({ title, count, icon, description, color }) => (
         {title}
       </h6>
       {description && (
-        <p className="text-muted mb-0 small">{description}</p>
+        <p className="text-muted mx-auto text-center mb-0 small">{description}</p>
       )}
     </div>
   </div>
@@ -63,9 +63,9 @@ const Count = () => {
   }, []);
 
   return (
-    <div className="container ">
-      <p className="h6 fw-bold  ">எங்களுடைய பங்களிப்புகள்</p>
-      <div className="row">
+    <div className="container mx-auto text-center ">
+      <p className="h6 fw-bold text-center  ">எங்களுடைய பங்களிப்புகள்</p>
+      <div className="row ">
         <CountBox 
           title="மொத்த குருதிக்கொடையாளர்கள்"
           count={totalDonors}

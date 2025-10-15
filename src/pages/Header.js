@@ -78,7 +78,7 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <button className="nav-link btn text-start text-light" onClick={() => handleNavClick("/Login")}>
-                <i className="bi bi-person-lock me-2 text-danger"></i> உள்நுழைக
+                <i className="bi bi-person-fill-lock me-2 text-danger"></i> உள்நுழைக
               </button>
             </li>
             <li className="nav-item">
