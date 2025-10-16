@@ -311,10 +311,20 @@ const Join = () => {
     onChange={handleChange}
     className="form-control"
     required
+    placeholder="பிறந்த தேதி *"
   />
-  <label className="form-label position-absolute ms-5" style={{ top: '5px', pointerEvents: 'none', color: '#656464ff' }}>
-    பிறந்த தேதி *
-  </label>
+    {!formData.dateofbirth && (
+        <label
+          className="form-label position-absolute ms-5"
+          style={{
+            top: "5px",
+            pointerEvents: "none",
+            color: "#656464ff",
+          }}
+        >
+          பிறந்த தேதி *
+        </label>
+      )}
 </div>
 
 

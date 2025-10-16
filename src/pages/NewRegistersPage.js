@@ -357,9 +357,9 @@ useEffect(() => {
               <div className="modal-body" id="pdf-content">
                 <div className="row ">
                   <div className="col-12 text-center  ">
-                    <div className="row text-center">
+                    <div className="row  text-center">
                       <div className="col-4">
-                        <p className="fw-bold mb-0">உறவாய் இணைவோம்!</p>
+                        <p className="fw-bold mb-0 mx-auto text-center">உறவாய் இணைவோம்!</p>
                         <img
                           src={na}
                           alt="Anna"
@@ -367,7 +367,7 @@ useEffect(() => {
                         />
                       </div>
                       <div className="col-4">
-                        <p className="fw-bold h2 mb-0">அ</p>
+                        <p className="fw-bold h2 mb-0 mx-auto text-center">அ</p>
                         <img
                           src={logo}
                           alt="Logo"
@@ -375,7 +375,7 @@ useEffect(() => {
                         />
                       </div>
                       <div className="col-4">
-                        <p className="fw-bold mb-0">உலகை <br></br>காப்போம்!</p>
+                        <p className="fw-bold mb-0 mx-auto text-center">உலகையே <br></br>காப்போம்!</p>
                         <img
                           src={mt}
                           alt="Anna"
