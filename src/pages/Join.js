@@ -84,41 +84,36 @@ const Join = () => {
   return (
     <div className="container mb-3">
       {/* Header Section with logo */}
-      <div className="container text-center bg-white mt-3">
-        <div className="row">
-          <div className="col-3 col-md-3 col-lg-2">
-            <p className="fw-bold mx-auto text-center mb-0">உறவாய் இணைவோம்!</p>
-            <img
-              src={na}
-              alt="Anna"
-              className="img-fluid br w-75 h-50 border-success rounded-circle"
-            />
-          </div>
-
-          <div className="col-1 col-md-1 col-lg-2"></div>
-
-          <div className="col-4 col-md-4 col-lg-4 text-center">
-            <p className="fw-bold h2 mb-0">அ</p>
-            <img
-              src={logo}
-              alt="Logo"
-              className="img-fluid logo-img mb-1"
-              style={{ width: "90px" }}
-            />
-          </div>
-
-          <div className="col-1 col-md-1 col-lg-2"></div>
-
-          <div className="col-3 col-md-3 col-lg-2 mx-auto">
-            <p className="fw-bold mx-auto text-center mb-0">உலகையே காப்போம்!</p>
-            <img
-              src={mt}
-              alt="Anna"
-              className="img-fluid br w-75 h-50 border-success rounded-circle"
-            />
-          </div>
-        </div>
-      </div>
+       <div className="container text-center bg-white mt-3">
+              <div className="row  ">
+                <div className="col-3 col-md-3  col-lg-2">
+                  <p className="fw-bold mx-auto text-center mb-0">உறவாய் இணைவோம்!</p>
+                  <img
+                    src={na}
+                    alt="Anna"
+                    className="img-fluid br w-75 h-50  border-success rounded-circle"
+                  />
+                </div>
+      
+                <div className="col-1 col-md-1 col-lg-2"></div>
+      
+                <div className="col-4 col-md-4 col-lg-4">
+                  <p className="fw-bold h2 mx-auto text-center mb-0 ">அ</p>
+                  <img src={logo} alt="Logo" className="img-fluid logo-img mb-0" />
+                </div>
+      
+                <div className="col-1 col-md-1 col-lg-2"></div>
+      
+                <div className="col-3 col-md-3 mb-6 col-lg-2 mx-auto">
+                  <p className="fw-bold mx-auto text-center mb-0">உலகையே காப்போம்!</p>
+                  <img
+                    src={mt}
+                    alt="Anna"
+                    className="img-fluid br w-75 h-50  border-success rounded-circle"
+                  />
+                </div>
+              </div>
+            </div>
 
       {/* Form Section */}
       <div className="text-center bg-white ">

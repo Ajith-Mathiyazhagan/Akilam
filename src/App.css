@@ -209,7 +209,7 @@ p {
   -webkit-background-clip: text;   /* WebKit support */
   color: transparent;
   -webkit-text-fill-color: transparent;
-  animation: colorRun 15s linear infinite;
+  animation: colorRun 19s linear infinite;
 }
 
 @keyframes colorRun {

@@ -1,43 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ta-IN">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ✅ Primary SEO -->
+    <title>அகிலம் நண்பர்கள் அறக்கட்டளை | Akilam Nanbargal Arakkattalai</title>
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="அகிலம் நண்பர்கள் அறக்கட்டளை – சமூக சேவைகள், இரத்த தானம், கல்வி உதவி, ஆதரவற்றோர் நலனுக்கான தொண்டு அமைப்பு. Join us to make a difference in society."
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <meta
+      name="keywords"
+      content="அகிலம் நண்பர்கள் அறக்கட்டளை, Akilam Nanbargal Arakkattalai, சமூக சேவை, இரத்த தானம், NGO Tamil Nadu, Charity, Volunteer, Akilam Foundation"
+    />
+    <meta name="author" content="Akilam Nanbargal Arakkattalai" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="ta-IN" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <!-- ✅ Canonical -->
+    <link rel="canonical" href="https://akilamnanbargalarakkattalai.com" />
+
+    <!-- ✅ Open Graph (Facebook / WhatsApp) -->
+    <meta property="og:title" content="அகிலம் நண்பர்கள் அறக்கட்டளை | Akilam Nanbargal Arakkattalai" />
+    <meta
+      property="og:description"
+      content="சமூக சேவைகள், இரத்த தானம், கல்வி உதவி மற்றும் மனிதநேயம் நிறைந்த தொண்டு செய்கைகள்."
+    />
+    <meta
+      property="og:image"
+      content="https://akilamnanbargalarakkattalai.com/og-image.jpg"
+    />
+    <meta property="og:url" content="https://akilamnanbargalarakkattalai.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ta_IN" />
+
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="அகிலம் நண்பர்கள் அறக்கட்டளை | Akilam Nanbargal Arakkattalai"
+    />
+    <meta
+      name="twitter:description"
+      content="Join Akilam Nanbargal Arakkattalai for social service and humanitarian work."
+    />
+    <meta
+      name="twitter:image"
+      content="https://akilamnanbargalarakkattalai.com/og-image.jpg"
+    />
+
+    <!-- ✅ Favicon & PWA Manifest -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- ✅ Theme Colors -->
+    <meta name="theme-color" content="#198754" />
+    <meta name="msapplication-TileColor" content="#198754" />
+
+    <!-- ✅ Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "NGO",
+        "name": "Akilam Nanbargal Arakkattalai",
+        "alternateName": "அகிலம் நண்பர்கள் அறக்கட்டளை",
+        "url": "https://akilamnanbargalarakkattalai.com",
+        "logo": "https://akilamnanbargalarakkattalai.com/logo.png",
+        "sameAs": [
+          "https://www.facebook.com/akilamnanbargal",
+          "https://www.instagram.com/akilamnanbargal"
+        ],
+        "description": "அகிலம் நண்பர்கள் அறக்கட்டளை – சமூக சேவைகள், இரத்த தானம், கல்வி உதவி, ஆதரவற்றோர் நலனுக்கான தொண்டு அமைப்பு.",
+        "founder": {
+          "@type": "Person",
+          "name": "Thiru D. Ari Akilan"
+        },
+        "foundingDate": "2020",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tiruvannamalai, Tamil Nadu, India"
+        }
+      }
+    </script>
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

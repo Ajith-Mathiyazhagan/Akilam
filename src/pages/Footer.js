@@ -21,7 +21,7 @@ const Footer = () => {
           </div>
 
           {/* Links Section */}
-          <div className="col-md-4 col-lg-4 col-xl-4 mx-auto text-center"> 
+          <div className="col-md-4 col-lg-4 col-xl-4 mx-auto text-center mb-2"> 
             <h5 className="text-uppercase mb-2 font-weight-bold">விரைவு இணைப்புகள்</h5>
               <div className="d-flex flex-column align-items-center">
                <button 
@@ -58,7 +58,7 @@ const Footer = () => {
           <div className="col-md-4 col-lg-4 col-xl-4 mx-auto ">
             <h5 className="text-uppercase mb-1 font-weight-bold">தொடர்பு</h5>
             <p className="mb-1 text-center"><i className="bi bi-geo-alt-fill me-2"></i> திருவண்ணாமலை, தமிழ்நாடு</p>
-            <p className="mb-1 text-center"><i className="bi bi-envelope-fill me-2"></i> info@agilam.in</p>
+            <p className="mb-1 text-center"><i className="bi bi-envelope-fill me-2"></i> info@akilamnanbargalarakkattalai.com</p>
             <p className="mb-1 text-center"><i className="bi bi-telephone-fill me-2"></i> +91 83447 86851</p>
           </div>
 
