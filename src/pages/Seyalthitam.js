@@ -20,7 +20,7 @@ const Seyalthitam = () => {
   const projectList = [
     // 🩸 Blood Donation (Bootstrap Icon)
     {
-      icon: <i className="bi bi-droplet-fill me-2"></i>,
+      icon: <i className="bi bi-droplet-fill "></i>,
       title: "இலவச குருதிக்கொடை திட்டம்",
       color: "danger",
       path: "/blood",

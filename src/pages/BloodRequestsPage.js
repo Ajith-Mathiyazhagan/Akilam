@@ -208,7 +208,7 @@ const BloodRequestsPage = () => {
                     <div>
                       <h5 className="mb-1">{req.name} ({req.age} வயது)</h5>
                       <p className="mb-1">பாலினம்: {req.gender}</p>
-                      <p className="mb-1">ரத்த வகை: {req.bloodGroup}</p>
+                      <p className="mb-1 ">இரத்த வகை: <span className="fw-bold text-danger">{req.bloodGroup}</span></p>
                       {req.helperName && <p className="mb-1"><strong>உதவியாளர்:</strong> {req.helperName} ({req.helperPhone})</p>}
                       {req.createdAt && (
                         <p className="mb-1">

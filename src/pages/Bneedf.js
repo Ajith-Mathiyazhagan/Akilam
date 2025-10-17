@@ -98,6 +98,30 @@ const Bneedf = () => {
         ...formData,
         createdAt: serverTimestamp(),
       });
+      
+     // ✅ Phone number check & default country code
+    let phoneWithCode = formData.phone;
+    if (!phoneWithCode.startsWith("+")) {
+      phoneWithCode = "+91" + phoneWithCode;
+    }
+
+    // ✅ Prepare payload for Make.com webhook
+    const payload = {
+      messaging_product: "whatsapp",
+      to: phoneWithCode, // Make.com webhookக்கு இதே number போட வேண்டும்
+      text: {
+        body: `Blood Request!\nName: ${formData.name}\nBlood Group: ${formData.bloodGroup}\nUnits: ${formData.units}\nHospital: ${formData.hospitalAddress}\nContact: ${formData.helperPhone}`
+      }
+    };
+
+       // 2️⃣ Send to Make Webhook
+    const webhookURL = "https://hook.eu2.make.com/d33k8t8eievsitnkjbf25i5arqw9jgob"; // Replace with Make webhook URL
+    await fetch(webhookURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
       alert("✅ உங்கள் தகவல்கள் வெற்றிகரமாக சமர்ப்பிக்கப்பட்டன!");
       navigate("/");
 
