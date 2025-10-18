@@ -396,7 +396,7 @@ useEffect(() => {
                       <tbody>
                         <tr>
                           <th>பெயர் :</th>
-                          <td className="fw-bold h5">{selected.name}</td>
+                          <td className="fw-bold">{selected.name}</td>
                         </tr>
                          <tr>
                           <th>வயது :</th>

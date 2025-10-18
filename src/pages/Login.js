@@ -3,13 +3,14 @@ import React, { useState } from "react";
 import logo from "../assets/logoakilam.png";
 import mt from "../assets/mm.jpg";
 import na from "../assets/na.jpg";
-import { FaUser, FaLock } from "react-icons/fa";
+import { FaUser, FaLock ,FaEye, FaEyeSlash} from "react-icons/fa";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -77,20 +78,33 @@ const Login = () => {
                 className="form-control"
                 placeholder="பயனர் பெயர் *"
                 value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                 onChange={(e) => setUsername(e.target.value.replace(/\s/g, ""))}
                 required
               />
             </div>
             <div className="mb-3 input-group">
               <span className="input-group-text bg-primary text-white"><FaLock /></span>
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 className="form-control"
+                minLength={3}
                 placeholder="கடவுச்சொல் *"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value.replace(/\s/g, ""))}
                 required
               />
+                <span
+                  className="position-absolute"
+                  style={{
+                    right: "12px",
+                    top: "5px",
+                    cursor: "pointer",
+                    color: "#555",
+                  }}
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </span>
             </div>
             <button type="submit" className="btn btn-success w-100">உள்நுழைவு</button>
           </form>

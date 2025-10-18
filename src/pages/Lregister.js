@@ -1,6 +1,6 @@
 // src/pages/Lregister.js
 import React, { useState } from "react";
-import { FaUser, FaLock } from "react-icons/fa";
+import { FaUser, FaLock,FaEyeSlash,FaEye } from "react-icons/fa";
 import logo from "../assets/logoakilam.png";
 import mt from "../assets/mm.jpg";
 import na from "../assets/na.jpg";
@@ -8,9 +8,11 @@ import { auth, db } from "../firebase";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { setDoc, doc, serverTimestamp } from "firebase/firestore";
 
+
 const Lregister = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -82,26 +84,39 @@ const Lregister = () => {
           <h3 className="text-center mainl-tamil-title mb-2">தலைமை உறுப்பினர்கள் பதிவு</h3>
           <form onSubmit={handleSubmit}>
             <div className="mb-3 input-group">
-              <span className="input-group-text bg-primary text-white"><FaUser /></span>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="பயனர் பெயர் *"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                required
-              />
+             <span className="input-group-text bg-primary text-white"><FaUser /></span>
+                           <input
+                             type="text"
+                             className="form-control"
+                             placeholder="பயனர் பெயர் *"
+                             value={username}
+                              onChange={(e) => setUsername(e.target.value.replace(/\s/g, ""))}
+                             required
+                           />
             </div>
             <div className="mb-3 input-group">
               <span className="input-group-text bg-primary text-white"><FaLock /></span>
-              <input
-                type="password"
-                className="form-control"
-                placeholder="கடவுச்சொல் *"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
+                           <input
+                             type={showPassword ? "text" : "password"}
+                             className="form-control"
+                             minLength={3}
+                             placeholder="கடவுச்சொல் *"
+                             value={password}
+                             onChange={(e) => setPassword(e.target.value.replace(/\s/g, ""))}
+                             required
+                           />
+                             <span
+                               className="position-absolute"
+                               style={{
+                                 right: "12px",
+                                 top: "5px",
+                                 cursor: "pointer",
+                                 color: "#555",
+                               }}
+                               onClick={() => setShowPassword(!showPassword)}
+                             >
+                               {showPassword ? <FaEyeSlash /> : <FaEye />}
+                             </span>
             </div>
             <button type="submit" className="btn btn-success w-100">பதிவு செய்யவும்</button>
           </form>
