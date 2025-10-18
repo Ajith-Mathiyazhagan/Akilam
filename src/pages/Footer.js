@@ -28,14 +28,14 @@ const Footer = () => {
             className="btn btn-link text-white text-decoration-none d-flex align-items-center"
             onClick={() => handleNavClick("/")}
           >
-            <i className="bi bi-person-badge-fill me-2 text-danger"></i> முகப்பு
+            <i className="bi bi-house-door-fill me-2 text-danger"></i> முகப்பு
           </button>
 
           <button 
             className="btn btn-link text-white text-decoration-none d-flex align-items-center"
             onClick={() => handleNavClick("/Founder")}
           >
-            <i className="bi bi-hand-thumbs-up-fill me-2 text-danger"></i> நிறுவனர்  
+            <i className="bi bi-person-badge-fill me-2 text-danger"></i> நிறுவனர்  
           </button>
 
           <button 

@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -27,6 +28,62 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import UserList from "./pages/UserList";
 
 function App() {
+ 
+ const [showCountdown, setShowCountdown] = useState(true);
+  const [timeLeft, setTimeLeft] = useState("");
+
+  useEffect(() => {
+    // Set your launch time (today 1:05 PM IST)
+    const launchTime = new Date();
+    
+
+    launchTime.setHours(13, 5, 0, 0); // 1:05 PM  
+   
+
+
+    const timer = setInterval(() => {
+      const now = new Date();
+      const diff = launchTime - now;
+
+      if (diff <= 0) {
+        clearInterval(timer);
+        setShowCountdown(false); // hide countdown after launch time
+      } else {
+        const minutes = Math.floor((diff / 1000 / 60) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+        const hours = Math.floor((diff / 1000 / 60 / 60) % 24);
+        setTimeLeft(
+          `${hours.toString().padStart(2, "0")}:${minutes
+            .toString()
+            .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`
+        );
+      }
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  if (showCountdown) {
+    return (
+      <div className="countdown-screen ">
+        <br></br>
+        <br></br>
+        <br></br>
+        <h2 className=" text-center mt-5">
+  அகிலம் நண்பர்கள் அறக்கட்டளை
+</h2>
+<h4 className="sub-tamil-title text-center">
+  தமிழ்நாடு
+</h4>
+<p className="text-center ">உறவாய் இணைவோம் !  உலகையே காப்போம் !
+</p>
+<p className="text-center ">இன்று மதியம் <strong className="text-danger mx-1 fs-6"> 1.05 </strong>  மணி அளவில்  எங்களின்  புதிய  இணையதளம்  அதிகாரப்பூர்வமாக தொடங்கப்படுகிறது. அனைவரும் இணைந்து  இந்த மண்ணிற்காகவும் , மக்களுக்காகவும்  தொடர்ந்து  சமூகப்பணியில்  ஈடுபடுவோம் .</p>
+        <h2 className="my-1 mb-3">{timeLeft}</h2>
+        <h3 className="text-center h2 fw-bold">விரைவில் வெளியீடு 🚀</h3>
+      </div>
+    );
+  }
+
   return (
     <div className="App">
       <Header />
