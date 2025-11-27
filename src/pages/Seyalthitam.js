@@ -29,7 +29,7 @@ const Seyalthitam = () => {
       icon: <FaHandHoldingHeart /> ,
       title: "சாலையோர ஆதரவற்றோருக்கான தினசரி உணவு வழங்கும் திட்டம்",
       color: "primary",
-      path: "/Whatsapp",
+      path: "/Food",
     },
 
     {
@@ -42,38 +42,38 @@ const Seyalthitam = () => {
       icon: <FaBookOpen />,
       title: "ஏழை எளிய மாணவ மாணவியரின் இலவச கல்வி உதவி திட்டம்",
       color: "success",
-      path: "/Whatsapp",
+      path: "/Eduhelp",
     },
     {
       icon: <FaTools />,
       title: "இலவச சுயதொழில் (ம) அரசு வேலைவாய்ப்பு பயிற்சி  திட்டம்",
       color: "warning",
-      path: "/Whatsapp",
+      path: "/Inf",
     },
     {
       icon: <FaWater />,
       title: "இயற்கை விவசாயம் (ம) நீர் நிலைகள் பாதுகாப்பு திட்டம் ",
       color: "info",
-      path: "/Whatsapp",
+      path: "/Vivasayam",
     },
     {
       icon: <FaSchool />,
       title: "இலவச இரவு பாட சாலை திட்டம்",
       color: "secondary",
-      path: "/Whatsapp",
+      path: "/Nightschool",
     },
 
     {
       icon: <FaHandsHelping />,
       title: "இயற்கை பேரிடர் மீட்பு பணிகள் திட்டம்",
       color: "danger",
-      path: "/Whatsapp",
+      path: "/cyclone",
     },
     {
       icon: <FaLightbulb />,
       title: "கல்வி, தொழில் (ம) சமூக விழிப்புணர்வு திட்டம்",
       color: "warning",
-      path: "/Whatsapp",
+      path: "/Social",
     },
   ];
 

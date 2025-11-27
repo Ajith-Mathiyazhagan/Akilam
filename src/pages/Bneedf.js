@@ -187,7 +187,9 @@ const Bneedf = () => {
 
       <div className=" text-center bg-white ">
        
-
+ <h6 className=" mt-0 fw-bold blue text-center">
+  பதிவு எண் : 587/2019
+</h6>
       <h4 className="text-center text-danger fw-bold mt-0">
         அகிலம் நண்பர்கள் அறக்கட்டளை 
       </h4>

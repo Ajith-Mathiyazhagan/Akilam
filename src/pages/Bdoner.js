@@ -130,7 +130,9 @@ const Bdoner = () => {
                 </div>
               </div>
             </div>
-      
+       <h6 className=" mt-0 fw-bold blue text-center">
+  பதிவு எண் : 587/2019
+</h6>
             <h4 className=" text-center text-danger fw-bold">
               அகிலம் நண்பர்கள் அறக்கட்டளை
             </h4>

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { db } from "../firebase";
 import { collection, onSnapshot } from "firebase/firestore";
 import { FaTint } from "react-icons/fa";
+import { FiPhoneOutgoing } from "react-icons/fi";
+
 import tamilnaduData from "../data/tamilnaduData.json";
 import logo from "../assets/logoakilam.png";
 import mt from "../assets/mm.jpg";
@@ -95,6 +97,9 @@ const DonorListPage = () => {
             />
           </div>
         </div>
+         <h6 className=" mt-0 fw-bold blue text-center">
+  பதிவு எண் : 587/2019
+</h6>
         <h4 className="text-center text-danger fw-bold ">
           அகிலம் நண்பர்கள் அறக்கட்டளை
         </h4>
@@ -210,11 +215,12 @@ const DonorListPage = () => {
                 <div
                   className="card shadow-sm p-3 border border-danger"
                   style={{ cursor: "pointer" }}
-                  onClick={() => setSelectedDonor(donor)}
+                  
                 >
                   <div className="d-flex align-items-center gap-3">
                     <FaTint className="fs-1 text-danger" />
-                    <div>
+                    <div 
+                    onClick={() => setSelectedDonor(donor)}>
                       <h5 className="mb-1">
                         {donor.name} ({donor.age} வயது)
                       </h5>
@@ -234,8 +240,27 @@ const DonorListPage = () => {
                         {donor.district}, {donor.constituency}
                       </p>
                     </div>
+                    <div>
+                      
+                    </div>
+<a
+  href={`tel:${donor.phone}`}
+  className="d-flex align-items-center justify-content-center"
+  style={{
+   
+    
+    borderRadius: "50%",
+     marginLeft: "auto",      // pushes to right (text-end)
+    textDecoration: "none"
+  }}
+>
+  <FiPhoneOutgoing size={28} color="#009c03ff" />   {/* white icon */}
+</a>
+
                   </div>
+                   
                 </div>
+               
               </div>
             ))
           ) : (

@@ -26,6 +26,13 @@ import Dashboard from "./pages/Dashbord";
 import Lregister from "./pages/Lregister";
 import ProtectedRoute from "./components/ProtectedRoute";
 import UserList from "./pages/UserList";
+import Eduhelp from "./pages/Eduhelp";
+import Cyclone from "./pages/Cyclone";
+import Vivasayam from "./pages/Vivasayam";
+import Nightschool from "./pages/Nightschool";
+import Social from "./pages/Social";
+import Food from "./pages/Food";
+import Inf from "./pages/Inf";
 
 function App() {
  
@@ -77,6 +84,13 @@ function App() {
         <Route path="/Founder" element={<Founder />}></Route>
         <Route path="/Login" element={<Login />}></Route>
         <Route path="/Dashbord" element={<Dashboard />} />
+        <Route path="/Eduhelp" element={<Eduhelp />} />
+        <Route path="/Cyclone" element={<Cyclone />} />
+        <Route path="/Vivasayam" element={<Vivasayam />} />
+        <Route path="/Nightschool" element={<Nightschool />} />
+        <Route path="/Social" element={<Social />} />
+        <Route path="/Food" element={<Food />} />
+        <Route path="/Inf" element={<Inf />} />
       </Routes>
 
       <Footer />

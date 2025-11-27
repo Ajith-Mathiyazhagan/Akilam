@@ -58,6 +58,9 @@ const Login = () => {
                />
              </div>
            </div>
+            <h6 className=" mt-0 fw-bold blue text-center">
+  பதிவு எண் : 587/2019
+</h6>
         <h2 className="main-tamil-title text-center mt-2">
        அகிலம் நண்பர்கள் அறக்கட்டளை
      </h2>
